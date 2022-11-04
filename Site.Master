@@ -1,0 +1,246 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="iQHub.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav pull-right">
+                        <li data-toggle="modal" data-target="#userModal"><a>User</a></li>
+                        <li data-toggle="modal" data-target="#organisationModal"><a>Organisation</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+<!-- Modal -->
+        <div id="userModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+            <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">User Registration</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h2>User</h2>
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#logIn">Log In</a></li>
+                            <li><a data-toggle="tab" href="#signUp">Sign Up</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="logIn" class="tab-pane fade in active">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="userEmailLog" runat="server" Text="Email:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtUserEmailLog" runat="server" TextMode="Email"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="emailLog1" ErrorMessage="Something is Missing..." ControlToValidate="TxtUserEmailLog"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="userPassLog" runat="server" Text="Password:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtUserPassLog" runat="server" TextMode="Password"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="passLog" ErrorMessage="Something is Missing..." ControlToValidate="TxtUserPassLog"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <asp:Button CssClass="btn btn-primary" runat="server" ID="userLogIn" Text="Log In"/>
+                                    </div>
+                                    <asp:Label ID="Label1" Text="" runat="server"></asp:Label>
+                                </div>
+                            </div>
+                            <div id="signUp" class="tab-pane fade">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="username" runat="server" Text="Username:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtUsername" runat="server"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="signUsername" ErrorMessage="Something is Missing..." ControlToValidate="TxtUsername"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="userEmailSign" runat="server" Text="Email:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtUserEmailSign" runat="server" TextMode="Email"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="signUserEmail" ErrorMessage="Something is Missing..." ControlToValidate="TxtUserEmailSign" ValidationExpression="Internet e-mail addresss"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="userPassSign" runat="server" Text="Password:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtUserPassSign" runat="server" TextMode="Password"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="signUserPass" ErrorMessage="Something is Missing..." ControlToValidate="TxtUserPassSign"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="userConPass" runat="server" Text="Confirm Password:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtUserConPass" runat="server" TextMode="Password" ControlToCompare="TxtUserPassSign" ></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="signUserConPass" ErrorMessage="Something is Missing..." ControlToValidate="TxtUserConPass"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <asp:Button CssClass="btn btn-primary" runat="server" ID="userRegister" Text="Sign Up"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Modal -->
+        <div id="organisationModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal Content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Organisation Registration</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Organisation</h2>
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#logIn_Organisation">Log In</a></li>
+                            <li><a data-toggle="tab" href="#signUp_Organisation">Sign Up</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="logIn_Organisation" class=" tab-pane fade in active">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="orgID" runat="server" Text="Organisation ID:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtOrgID" runat="server" TextMode="Number"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="OrgIDLog" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgID"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="orgEmailLog" runat="server" Text="Email"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtOrgEmailLog" runat="server" TextMode="Email"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="OrgEmailLog1" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgEmailLog" ValidationExpression="Internet e-mail addresss"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="orgPassLog" runat="server" Text="Password"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtPassLog" runat="server" TextMode="Password"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="OrgPassLog1" ErrorMessage="Something is Missing..." ControlToValidate="TxtPassLog"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <asp:Button CssClass="btn btn-primary" runat="server" ID="logInOrg" Text="Log In"/>
+                                    </div>
+                                    <asp:Label ID="loginNotification" Text="" runat="server"></asp:Label>
+                                </div>
+                            </div>
+
+                            <div id="signUp_Organisation" class="tab-pane fade">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="orgName" runat="server" Text="Organisation Name:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtOrgName" runat="server"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="OrgNameSign" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgName"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="orgLoc" runat="server" Text="Location:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtOrgLoc" runat="server"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="OrgLoc1" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgLoc"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="orgType" runat="server" Text="Organisation Type:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtOrgType" runat="server"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="OrgType1" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgType"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="orgEmailSign" runat="server" Text="Email:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtOrgEmailSign" runat="server" TextMode="Email" ></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="OrgEmailSign1" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgEmailSign" ValidationExpression="Internet e-mail addresss"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="orgPassSign" runat="server" Text="Password:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtOrgPassSign" runat="server" TextMode="Password" ></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="OrgPassSign1" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgPassSign"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="orgConPass" runat="server" Text="Confirm Password:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtOrgConPass" runat="server" TextMode="Password" ControlToCompare="TxtOrgPassSign"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="OrgConPass1" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgConPass"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="orgVeri" runat="server" Text="Verification:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtOrgVeri" runat="server"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="OrgVeri1" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgVeri"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label CssClass="control-label col-sm-4" ID="orgSocials" runat="server" Text="Socials:"></asp:Label>
+                                            <asp:TextBox CssClass="form-control" ID="TxtOrgSocials" runat="server"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="OrgSocials1" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgSocials"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <asp:Button CssClass="btn btn-primary" runat="server" ID="SignUpOrg" Text="Sign Up" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
