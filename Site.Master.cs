@@ -33,7 +33,7 @@ namespace iQHub
                     SqlCommand cmd = new SqlCommand(addUserQuery, con);
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@useremail", userEmail);
-                    cmd.Parameters.AddWithValue("@userpassword", userPassword, Hashing.hashPassword(TxtUserPassSign.Text));
+                    cmd.Parameters.AddWithValue("@userPassword", Hashing.hashPassword(userPassword));
 
                     cmd.ExecuteNonQuery();
                 }
@@ -73,7 +73,7 @@ namespace iQHub
                     string addUserQUery = "SELECT * FROM dbo.User WHERE Email = @emailAddress AND Password = @password ";
                     SqlCommand cmd = new SqlCommand(addUserQUery, con);
                     cmd.Parameters.AddWithValue("@emailAddress", emailAddress);
-                    cmd.Parameters.AddWithValue("@password", password, Hashing.hashPassword(TxtUserPassLog.Text));
+                    cmd.Parameters.AddWithValue("@password", Hashing.hashPassword(password));
 
                     DataSet ds = new DataSet();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -113,7 +113,7 @@ namespace iQHub
                     cmd2.Parameters.AddWithValue("@orgName", orgName);
                     cmd2.Parameters.AddWithValue("@orgLocation", orgLocation);
                     cmd2.Parameters.AddWithValue("@orgEmail", orgEmail);
-                    cmd2.Parameters.AddWithValue("@orgPassword", orgPassword, Hashing.hashPassword(TxtOrgPassSign.Text));
+                    cmd2.Parameters.AddWithValue("@orgPassword", Hashing.hashPassword(orgPassword));
                     cmd2.Parameters.AddWithValue("@orgVerification", orgVerification);
                     cmd2.Parameters.AddWithValue("@orgSocials", orgSocials);
                     cmd2.Parameters.AddWithValue("@orgType", orgType);
@@ -128,7 +128,7 @@ namespace iQHub
 
         protected void logInOrg_Click(object sender, EventArgs e)
         {
-            LoginOrganisation(TxtOrgID.Text, TxtOrgEmailLog.Text, TxtPassLog.Text);
+            LoginOrganisation(int.Parse(TxtOrgID.Text), TxtOrgEmailLog.Text, TxtPassLog.Text);
         }
 
         private void LoginOrganisation(int orgID, string emailAddress, string password)
@@ -143,7 +143,7 @@ namespace iQHub
                     SqlCommand cmd = new SqlCommand(addUserQUery, con2);
                     cmd.Parameters.AddWithValue("@ordID", orgID);
                     cmd.Parameters.AddWithValue("@emailAddress", emailAddress);
-                    cmd.Parameters.AddWithValue("@password", password, Hashing.hashPassword(TxtPassLog.Text));
+                    cmd.Parameters.AddWithValue("@password", Hashing.hashPassword(password));
 
                     DataSet ds = new DataSet();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
