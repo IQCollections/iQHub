@@ -63,9 +63,9 @@
         <p>Click on the buttons inside the tabbed menu:</p>
 
         <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
-            <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
         </div>
 
         <div id="London" class="tabcontent">
@@ -73,12 +73,12 @@
             <p>London is the capital city of England.</p>
         </div>
 
-        <div id="Paris" class="tabcontent">
+        <div id="Paris" class="tabcontent" style="display:none">
             <h3>Paris</h3>
             <p>Paris is the capital of France.</p>
         </div>
 
-        <div id="Tokyo" class="tabcontent">
+        <div id="Tokyo" class="tabcontent" style="display:none">
             <h3>Tokyo</h3>
             <p>Tokyo is the capital of Japan.</p>
         </div>

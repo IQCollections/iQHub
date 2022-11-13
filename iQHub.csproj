@@ -151,6 +151,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Home2.aspx" />
     <Content Include="HtmlPage1.html" />
     <Content Include="orgEdit.aspx" />
     <Content Include="orgEditPage.aspx" />
@@ -233,6 +234,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Hashing.cs" />
+    <Compile Include="Home2.aspx.cs">
+      <DependentUpon>Home2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home2.aspx.designer.cs">
+      <DependentUpon>Home2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="orgEdit.aspx.cs">
       <DependentUpon>orgEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
