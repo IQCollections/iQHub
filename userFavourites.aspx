@@ -1,6 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeBehind="userFavourites.aspx.cs" Inherits="WebApplication4.userFavourites" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="userFavourites.aspx.cs" Inherits="WebApplication4.userFavourites" %>
+   
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+       <!DOCTYPE html>
 
-<!DOCTYPE html>
+
+
 <style> 
     .div-1 {
         background-color: #0094ff;
@@ -33,12 +37,13 @@ width: 100%;
 margin: 5px;
 }
 </style>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<html>
+ 
+<head>
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server" >
+    <form id="form1" >
         <div  align="center">
             <div class ="div-1">
            <br />
@@ -70,7 +75,8 @@ margin: 5px;
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
               </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Organisation.orgName AS Name, Organisation.orgEmail AS Email FROM saveORG INNER JOIN Organisation ON saveORG.orgID = Organisation.orgID INNER JOIN Users ON saveORG.userEmail = Users.userEmail" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"></asp:SqlDataSource>
     </form>
-</body>
+</body>   
 </html>
+ </asp:Content>
