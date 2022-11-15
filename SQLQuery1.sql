@@ -1,0 +1,38 @@
+﻿CREATE TABLE Organisation(
+orgID INT NOT NULL IDENTITY  PRIMARY KEY,
+orgEmail VARCHAR(50) NOT NULL,
+orgName VARCHAR(50) NOT NULL,
+orgPassword VARCHAR(50) NOT NULL,
+orgLocation VARCHAR(50) NOT NULl,
+orgCategory VARCHAR(50) NOT NUll,
+isApproved  bit NOT NULL,
+orgDonated  MONEY NOT NULL,
+pageVisits int NOT NULL);
+
+
+CREATE TABLE Users(
+userEmail VARCHAR(50) NOT NULL PRIMARY KEY,
+userPassword VARCHAR(50) NOT NULL ,
+userName VARCHAR(50) NOT NULL,
+isAdmin bit NOT NULL)
+
+
+CREATE TABLE saveORG(
+savedID int NOT NULL IDENTITY PRIMARY KEY ,
+userEmail VARCHAR(50) NOT NULL,
+orgID int NOT NULL ,
+FOREIGN KEY(userEmail) REFERENCES Users(userEmail),
+FOREIGN KEY (orgID) REFERENCES Organisation(orgID))
+
+CREATE TABLE Donations(
+donationID int NOT NULL IDENTITY PRIMARY KEY,
+orgID int NOT NULL ,
+donationAmount MONEY NOT NULL,
+FOREIGN KEY (orgID) REFERENCES Organisation(orgID))
+
+CREATE TABLE posts(
+postID int NOT NULL IDENTITY PRIMARY KEY,
+orgID int NOT NULL,
+postTitle VARCHAR(50) NOT NUll,
+postDescription VARCHAR(50) 
+)
