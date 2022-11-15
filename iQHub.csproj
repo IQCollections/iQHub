@@ -53,6 +53,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll</HintPath>
@@ -159,6 +160,8 @@
     <Content Include="HtmlPage1.html" />
     <Content Include="orgEdit.aspx" />
     <Content Include="orgEditPage.aspx" />
+    <Content Include="Stats.aspx" />
+    <Content Include="userFavourites.aspx" />
     <Content Include="xbcad icons\ic_clothes.png" />
     <Content Include="xbcad icons\ic_details.png" />
     <Content Include="xbcad icons\ic_donate.png" />
@@ -280,6 +283,20 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Stats.aspx.cs">
+      <DependentUpon>Stats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stats.aspx.designer.cs">
+      <DependentUpon>Stats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userFavourites.aspx.cs">
+      <DependentUpon>userFavourites.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userFavourites.aspx.designer.cs">
+      <DependentUpon>userFavourites.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
