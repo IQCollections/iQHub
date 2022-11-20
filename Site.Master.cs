@@ -23,7 +23,7 @@ namespace iQHub
 
         private void RegisterUser(string username, string userEmail, string userPassword)
         {
-            string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\alipy\\source\\repos\\XBCAD_2\\App_Data\\XBCAD.mdf;Integrated Security=True";
+            string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ABC\source\repos\iQHub\App_Data\Xbcad.mdf;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(connString))
             {
                 try

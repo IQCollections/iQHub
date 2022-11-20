@@ -85,20 +85,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
-            <div class="card">
-                <div class="card-body">
-                    <h2 id="heading">Requests 
-                        <i id="icon">
-                            <asp:Image ID="Req" ImageUrl="~/xbcad icons/ic_req.png" runat="server" />
-                        </i>
-                    </h2 id="heading">
-                    <div style="text-align: center">
-                        <asp:HyperLink ID="HyperLink10" runat="server" href="/orgEdit">Current Requests</asp:HyperLink>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="col-lg-3">
             <div class="card">
                 <div class="card-body">
@@ -108,9 +95,9 @@
                         </i>
                     </h2>
                     <div style="text-align: center">
-                        <asp:HyperLink ID="HyperLink2" runat="server" href="/orgEdit">Current Projects</asp:HyperLink>
-                        <br />
-                        <asp:HyperLink ID="HyperLink4" runat="server" href="/orgEdit">Future Projects</asp:HyperLink> <br />
+
+
+                        <asp:HyperLink ID="HyperLink4" runat="server" href="/orgEdit#Donation">Future Projects</asp:HyperLink> <br />
                         <asp:HyperLink ID="HyperLink5" runat="server" href="/orgEdit">Completed Projects</asp:HyperLink> <br />
                     </div>
                 </div>
@@ -130,20 +117,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
-            <div class="card">
-                <div class="card-body">
-                    <h2 id="heading">Social Media
-                        <i id="icon">
-                            <asp:Image ID="Image4" ImageUrl="~/xbcad icons/ic_social.png" runat="server" />
-                        </i>
-                    </h2>
-                    <div style="text-align: center">
-                        <asp:HyperLink ID="HyperLink7" runat="server" href="/orgEdit">Social Media</asp:HyperLink>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="col-lg-3">
             <div class="card">
                 <div class="card-body">
@@ -154,8 +128,8 @@
                     </h2>
                     <div style="text-align: center">
                         <asp:HyperLink ID="HyperLink8" runat="server" href="/orgEdit">Personal Details</asp:HyperLink>
-                        <br />
-                        <asp:HyperLink ID="HyperLink9" runat="server" href="/orgEdit">Address</asp:HyperLink>
+                       
+                        
                     </div>
                 </div>
             </div>

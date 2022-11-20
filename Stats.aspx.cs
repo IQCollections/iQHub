@@ -20,7 +20,7 @@ namespace iQHub
         {
             DataTable dt = new DataTable();
             DataTable dt2 = new DataTable();
-            string sqlCon = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\msilv\\OneDrive\\Documents\\GitHub\\iQHub\\App_Data\\Xbcad.mdf;Integrated Security=True";
+            string sqlCon = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ABC\source\repos\iQHub\App_Data\Xbcad.mdf;Integrated Security=True";
             string sqlCmd = "SELECT TOP (5) [orgName],[pageVisits] FROM [dbo].[Organisation] ORDER BY [pageVisits] DESC";
             string sqlCmd2 = "SELECT TOP (5) [orgName],[orgDonated] FROM [dbo].[Organisation] ORDER BY [orgDonated] DESC";
             using (SqlConnection con = new SqlConnection(sqlCon))
