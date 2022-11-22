@@ -227,8 +227,8 @@
                     <hr>
                     <hr>
                     <div class="btn-block">
-                        <button id="btnLogin" runat="server" onclick="btnLogin_Click" width="80px">Login</button>
-                        <asp:Button ID="Button2" runat="server" Text="Login" OnClick="btnLogin_Click" Width="80px" />
+                        
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="80px" />
                         <hr />
                         
                     </div>
@@ -253,7 +253,7 @@
                 
                 document.getElementById(cityName).style.display = "block";
                 evt.currentTarget.className += " active";
-                document.getElementById(lblMsgReg).style.visibility = "false";
+                
             }
         </script>
 

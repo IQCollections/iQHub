@@ -31,8 +31,8 @@ namespace iQHub
                 }
                 con.Close();// closes the connection
             }
-            
-            
+
+
         }
         protected void btnRegister_Click(object sender, EventArgs e)
         {
@@ -74,10 +74,10 @@ namespace iQHub
             if (temp == 1)
             {
                 con.Open();// opens the connection 
-                string chkPass = "select password from Users where userEmail = '" + userLogin + "' ";// sql query 
+                string chkPass = "select userPassword from Users where userEmail = '" + userLogin + "' ";// sql query 
                 SqlCommand passCom = new SqlCommand(chkPass, con);
                 string password = passCom.ExecuteScalar().ToString().Replace(" ", "");// executes the query
-                if (password == txtPassLog.Text)
+                if (password == Hashing.hashPassword(txtPassLog.Text))
                 {
                     lblMsgLog.Visible = true;
                     lblMsgLog.Text = "Details entered is correct";// checks if password is correct

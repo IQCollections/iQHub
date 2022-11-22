@@ -43,10 +43,10 @@ namespace iQHub
             if (temp == 1)
             {
                 con.Open();// opens the connection 
-                string chkPass = "select password from Users where userEmail = '" + userLogin + "' ";// sql query 
+                string chkPass = "select userPassword from Users where userEmail = '" + userLogin + "' ";// sql query 
                 SqlCommand passCom = new SqlCommand(chkPass, con);
                 string password = passCom.ExecuteScalar().ToString().Replace(" ", "");// executes the query
-                if (password == txtPassword.Text)
+                if (password == Hashing.hashPassword(txtPassword.Text))
                 {
                     lblMsg.Visible = true;
                     lblMsg.Text = "Details entered is correct";// checks if password is correct
