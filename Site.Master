@@ -95,7 +95,7 @@
                                         </div>
                                         <asp:Button CssClass="btn btn-primary" runat="server" ID="userLogIn" Text="Log In" />
                                     </div>
-                                    <asp:Label ID="Label1" Text="" runat="server"></asp:Label>
+                                    <asp:Label ID="lblMsgULog" Text="" runat="server"></asp:Label>
                                 </div>
                             </div>
                             <div id="signUp" class="tab-pane fade">
@@ -116,11 +116,7 @@
                                             <asp:TextBox CssClass="form-control" ID="TxtUserPassSign" runat="server" TextMode="Password"></asp:TextBox>
                                             <asp:RequiredFieldValidator runat="server" ID="signUserPass" ErrorMessage="Something is Missing..." ControlToValidate="TxtUserPassSign"></asp:RequiredFieldValidator>
                                         </div>
-                                        <div class="form-group">
-                                            <asp:Label CssClass="control-label col-sm-4" ID="userConPass" runat="server" Text="Confirm Password:"></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="TxtUserConPass" runat="server" TextMode="Password" ControlToCompare="TxtUserPassSign"></asp:TextBox>
-                                            <asp:RequiredFieldValidator runat="server" ID="signUserConPass" ErrorMessage="Something is Missing..." ControlToValidate="TxtUserConPass"></asp:RequiredFieldValidator>
-                                        </div>
+                                        <asp:Label ID="lblMsgUSign" runat="server" Text=""></asp:Label>
                                         <asp:Button CssClass="btn btn-primary" runat="server" ID="userRegister" Text="Sign Up" />
                                     </div>
                                 </div>
@@ -169,8 +165,10 @@
                                             <asp:TextBox CssClass="form-control" ID="TxtPassLog" runat="server" TextMode="Password"></asp:TextBox>
                                             <asp:RequiredFieldValidator runat="server" ID="OrgPassLog1" ErrorMessage="Something is Missing..." ControlToValidate="TxtPassLog"></asp:RequiredFieldValidator>
                                         </div>
+                                        
                                         <asp:Button CssClass="btn btn-primary" runat="server" ID="logInOrg" Text="Log In" />
                                     </div>
+                                    <asp:Label ID="lblMsgOrgLog" runat="server" Text="" Visible="false"></asp:Label>
                                     <asp:Label ID="loginNotification" Text="" runat="server"></asp:Label>
                                 </div>
                             </div>
@@ -203,23 +201,10 @@
                                             <asp:TextBox CssClass="form-control" ID="TxtOrgPassSign" runat="server" TextMode="Password"></asp:TextBox>
                                             <asp:RequiredFieldValidator runat="server" ID="OrgPassSign1" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgPassSign"></asp:RequiredFieldValidator>
                                         </div>
-                                        <div class="form-group">
-                                            <asp:Label CssClass="control-label col-sm-4" ID="orgConPass" runat="server" Text="Confirm Password:"></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="TxtOrgConPass" runat="server" TextMode="Password" ControlToCompare="TxtOrgPassSign"></asp:TextBox>
-                                            <asp:RequiredFieldValidator runat="server" ID="OrgConPass1" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgConPass"></asp:RequiredFieldValidator>
-                                        </div>
-                                        <div class="form-group">
-                                            <asp:Label CssClass="control-label col-sm-4" ID="orgVeri" runat="server" Text="Verification:"></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="TxtOrgVeri" runat="server"></asp:TextBox>
-                                            <asp:RequiredFieldValidator runat="server" ID="OrgVeri1" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgVeri"></asp:RequiredFieldValidator>
-                                        </div>
-                                        <div class="form-group">
-                                            <asp:Label CssClass="control-label col-sm-4" ID="orgSocials" runat="server" Text="Socials:"></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="TxtOrgSocials" runat="server"></asp:TextBox>
-                                            <asp:RequiredFieldValidator runat="server" ID="OrgSocials1" ErrorMessage="Something is Missing..." ControlToValidate="TxtOrgSocials"></asp:RequiredFieldValidator>
-                                        </div>
+                                        
                                         <asp:Button CssClass="btn btn-primary" runat="server" ID="SignUpOrg" Text="Sign Up" />
                                     </div>
+                                    <asp:Label ID="lblMsgOrgSign" runat="server" Text="" Visible="false" ForeColor="Red"></asp:Label>
                                 </div>
                             </div>
                         </div>
