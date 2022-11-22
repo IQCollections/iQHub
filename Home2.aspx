@@ -87,7 +87,7 @@
     </style>
 
     <div style="background-image: url(NatureImg2.jpg); height: 300px; padding: 100px 0px 0px 20%" >
-        <h1 style="vertical-align: center">"Only a life lived in the service to others is worth living."</h1>
+        <h1 style="vertical-align: central">"Only a life lived in the service to others is worth living."</h1>
         <h4>- Albert Einstein</h4>
     </div>
     
