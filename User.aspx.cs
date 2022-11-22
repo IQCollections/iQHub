@@ -12,19 +12,20 @@ namespace iQHub
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblMsg.Visible = false;
+            lblMsgReg.Visible = false;
+            lblMsgLog.Visible = false;
             if (IsPostBack)
             {
                 SqlConnection con = new SqlConnection(SiteMaster.connString);// connection string to connect to database
                 con.Open();// open the connection
-                string checkuser = "select count(*) from Users where Username = '" + txtUsername.Text + "' ";//sql query
+                string checkuser = "select count(*) from Users where userEmail = '" + txtEmailReg + "' ";//sql query
                 SqlCommand com = new SqlCommand(checkuser, con);
                 int temp = Convert.ToInt32(com.ExecuteScalar().ToString());// executes the query
                 if (temp == 1)
                 {
                     //checks for user existence
-                    lblMsg.Visible = true;
-                    lblMsg.Text = "User already Exists";
+                    lblMsgReg.Visible = true;
+                    lblMsgReg.Text = "User already Exists";
 
                 }
                 con.Close();// closes the connection
@@ -38,21 +39,21 @@ namespace iQHub
                 con.Open();// open the connection 
                 string insert = "insert into Users (userEmail, userPassword, userName, isAdmin) values (@uEmail, @pass, @user, @admin)";// sql query to insert the data
                 SqlCommand com = new SqlCommand(insert, con);
-                com.Parameters.AddWithValue("@user", txtUsername.Text);// adding the value to the db
-                com.Parameters.AddWithValue("@pass", txtPassword.Text);// adding the value to the db
-                com.Parameters.AddWithValue("uEmail", txtUseremail.Text);// adding the value to the db
+                com.Parameters.AddWithValue("@user", txtUsernameReg.Text);// adding the value to the db
+                com.Parameters.AddWithValue("@pass", txtPassReg.Text);// adding the value to the db
+                com.Parameters.AddWithValue("uEmail", txtEmailReg.Text);// adding the value to the db
                 
                 com.ExecuteNonQuery();//executing the query
-                lblMsg.Visible = true;
-                lblMsg.Text = "Registration is successful";//display msg if succesful
+                lblMsgReg.Visible = true;
+                lblMsgReg.Text = "Registration is successful";//display msg if succesful
 
                 con.Close();// closes the connection
 
             }
             catch (Exception error)// catches the error
             {
-                lblMsg.Visible = true;
-                lblMsg.Text = "error" + error.ToString();// displays error msg
+                lblMsgReg.Visible = true;
+                lblMsgReg.Text = "error" + error.ToString();// displays error msg
 
             }
         }

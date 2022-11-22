@@ -69,34 +69,169 @@
                 }
             }
         </style>
+
+        <style>
+            /*html, body {*/
+                /*display: flex;*/
+                /*justify-content: center;
+                height: 100%;
+            }*/
+
+            /*body, div, h1, form, input, p {
+                padding: 0;
+                margin: 0;
+                outline: none;
+                font-family: Roboto, Arial, sans-serif;
+                font-size: 16px;
+                color: #666;
+            }*/
+            
+
+            h1 {
+                padding: 10px 0;
+                font-size: 32px;
+                font-weight: 300;
+                text-align: center;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            hr {
+                color: #a9a9a9;
+                opacity: 0.3;
+            }
+
+            .main-block {
+                max-width: 340px;
+                min-height: 460px;
+                padding: 10px 0;
+                margin: auto;
+                border-radius: 5px;
+                border: solid 1px #ccc;
+                box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+                background: #ebebeb;
+            }
+
+            form {
+                margin: 0 30px;
+            }
+
+           
+
+            label#icon {
+                margin: 0;
+                border-radius: 5px 0 0 5px;
+            }
+
+            input[type=text], input[type=password] {
+                width: calc(100% - 57px);
+                height: 36px;
+                margin: 13px 0 0 -5px;
+                padding-left: 10px;
+                border-radius: 0 5px 5px 0;
+                border: solid 1px #cbc9c9;
+                box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+                background: #fff;
+            }
+
+            input[type=password] {
+                margin-bottom: 15px;
+            }
+
+            #icon {
+                display: inline-block;
+                padding: 9.3px 15px;
+                box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+                background: #1c87c9;
+                color: #fff;
+                text-align: center;
+            }
+
+            .btn-block {
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            button {
+                width: 50%;
+                padding: 10px 0;
+                margin: 10px auto;
+                border-radius: 5px;
+                border: none;
+                background: #1c87c9;
+                font-size: 14px;
+                font-weight: 600;
+                color: #fff;
+            }
+
+                button:hover {
+                    background: #26a9e0;
+                }
+        </style>
     </head>
     <body>
 
-        <h3>Fade in Tabs</h3>
+        <h3>Register</h3>
 
         <div class="tab">
-            <button type="button" class="tablinks" onclick="openCity(event, 'London')">London</button>
-            <button type="button" class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-            <button type="button" class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+            <button type="button" class="tablinks" onclick="openUser(event, 'Register')">Register</button>
+            <button type="button" class="tablinks" onclick="openUser(event, 'Login')">Login</button>
+            <%--<button type="button" class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>--%>
         </div>
 
-        <div id="London" class="tabcontent">
-            <h3>London</h3>
-            <p>London is the capital city of England.</p>
+        <div id="Register" class="tabcontent">
+            <div class="main-block">
+                <h1>Registration</h1>
+                <form action="/">
+                    <hr>
+                    
+                    <hr>
+                    <label id="icon" for="name"><i class="fa fa-envelope"></i></label>
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <input id="txtEmailReg" type="text" name="name" id="name" placeholder="User Email" required />
+                    <label id="icon" for="name"><i class="fa fa-user"></i></label>
+                    <input id="txtUsernameReg" type="text" name="name" id="name" placeholder="User Name" required />
+                    <label id="icon" for="name"><i class="fa fa-unlock-alt"></i></label>
+                    <input id="txtPassReg" type="password" name="name" id="name" placeholder="Password" required />
+                    <hr>
+                    <hr>
+                    <div class="btn-block">
+                        
+                        <button type="submit" href="/">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
-        <div id="Paris" class="tabcontent" style="display: none">
-            <h3>Paris</h3>
-            <p>Paris is the capital of France.</p>
+        <div id="Login" class="tabcontent" style="display: none">
+            <div class="main-block">
+                <h1>Login</h1>
+                <form action="/">
+                    <hr>
+                    
+                    <hr>
+                    <label id="icon" for="name"><i class="fa fa-envelope"></i></label>
+                    <input id="txtEmailLog" type="text" name="name" id="name" placeholder="Email" required />
+                    <label id="icon" for="name"><i class="fa fa-user"></i></label>
+                    <input id="txtUsernameLog" type="text" name="name" id="name" placeholder="Name" required />
+                    <label id="icon" for="name"><i class="fa fa-unlock-alt"></i></label>
+                    <input id="txtPassLog" type="password" name="name" id="name" placeholder="Password" required />
+                    <hr>
+                    <hr>
+                    <div class="btn-block">
+                        
+                        <button type="submit" href="/">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
-        <div id="Tokyo" class="tabcontent" style="display: none">
-            <h3>Tokyo</h3>
-            <p>Tokyo is the capital of Japan.</p>
-        </div>
+
 
         <script>
-            function openCity(evt, cityName) {
+            function openUser(evt, cityName) {
                 var i, tabcontent, tablinks;
                 tabcontent = document.getElementsByClassName("tabcontent");
                 for (i = 0; i < tabcontent.length; i++) {
