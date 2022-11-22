@@ -219,18 +219,16 @@
 
                     <hr>
                     <label id="icon" for="name"><i class="fa fa-envelope"></i></label>
-
                     <asp:TextBox ID="txtEmailLog" runat="server" placeholder="User Email" required></asp:TextBox>
                     <label id="icon" for="name"><i class="fa fa-user"></i></label>
-
-                    <asp:TextBox ID="txtUsernameLog" runat="server" placeholder="User Email" required></asp:TextBox>
+                    <asp:TextBox ID="txtUsernameLog" runat="server" placeholder="User Name" required></asp:TextBox>
                     <label id="icon" for="name"><i class="fa fa-unlock-alt"></i></label>
-
-                    <asp:TextBox ID="txtPassLog" runat="server" placeholder="User Email" required></asp:TextBox>
+                    <asp:TextBox ID="txtPassLog" TextMode="Password" runat="server" placeholder="User Password" required></asp:TextBox>
                     <hr>
                     <hr>
                     <div class="btn-block">
                         <button id="btnLogin" runat="server" onclick="btnLogin_Click" width="80px">Login</button>
+                        <asp:Button ID="Button2" runat="server" Text="Login" OnClick="btnLogin_Click" Width="80px" />
                         <hr />
                         
                     </div>
@@ -250,9 +248,12 @@
                 tablinks = document.getElementsByClassName("tablinks");
                 for (i = 0; i < tablinks.length; i++) {
                     tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    
                 }
+                
                 document.getElementById(cityName).style.display = "block";
                 evt.currentTarget.className += " active";
+                document.getElementById(lblMsgReg).style.visibility = "false";
             }
         </script>
 

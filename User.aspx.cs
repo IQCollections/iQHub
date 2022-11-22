@@ -57,7 +57,7 @@ namespace iQHub
             {
                 lblMsgReg.Visible = true;
                 lblMsgReg.Text = "error" + error.ToString();// displays error msg
-
+                
             }
             
         }
@@ -81,7 +81,7 @@ namespace iQHub
                 {
                     lblMsgLog.Visible = true;
                     lblMsgLog.Text = "Details entered is correct";// checks if password is correct
-                    Response.Redirect("Home2.aspx");// redirects user to main page
+                    Page.Response.Redirect("orgEdit.aspx");// redirects user to main page
                 }
                 else
                 {
