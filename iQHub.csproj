@@ -158,7 +158,6 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Home2.aspx" />
-    <Content Include="HtmlPage1.html" />
     <Content Include="Login.aspx" />
     <Content Include="orgEdit.aspx" />
     <Content Include="orgEditPage.aspx" />

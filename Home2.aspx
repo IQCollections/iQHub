@@ -112,9 +112,9 @@
 	
 	<div style="margin: 50px 0px 150px 0px">
 		<div class="card">
-			<h1 style="text-align: center; border-bottom: 4px solid deepskyblue; padding: 15px"><a href="#">Organisation 1</a></h1>
-			<h2>What we do</h2>
-			<p>We are a baby clinic. We do what we do because it's what we do. Our values are: this, this, and this.</P>
+			<h1 style="text-align: center; border-bottom: 4px solid deepskyblue; padding: 15px"><asp:HyperLink ID="Org1Name" NavigateUrl="#" runat="server"></asp:HyperLink></h1>
+			<div style="font-size: 30px; text-align: center"><asp:label ID="Org1Type" runat="server">What we do</asp:label></div>
+			<p><asp:label ID="Org1Descrip" runat="server">We are a baby clinic. We do what we do because it's what we do. Our values are: this, this, and this.</asp:label></P>
 			<p><b>Address:</b> 1 Street ave, Suburb, City</p>
 			<p><b>Contact:</b> 000 0000 0000 | ngo@ngo.ngo</p>
 			<p><b>What we need:</b> Baby clothes</p>
