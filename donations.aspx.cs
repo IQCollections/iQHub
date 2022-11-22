@@ -12,7 +12,7 @@ namespace iQHub
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            e
+            
         }
 
         protected void btnDonate_Click(object sender, EventArgs e)
