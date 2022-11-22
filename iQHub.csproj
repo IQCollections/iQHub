@@ -159,8 +159,10 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Home2.aspx" />
     <Content Include="HtmlPage1.html" />
+    <Content Include="Login.aspx" />
     <Content Include="orgEdit.aspx" />
     <Content Include="orgEditPage.aspx" />
+    <Content Include="User.aspx" />
     <Content Include="Stats.aspx" />
     <Content Include="userFavourites.aspx" />
     <Content Include="xbcad icons\ic_clothes.png" />
@@ -257,6 +259,13 @@
     <Compile Include="Home2.aspx.designer.cs">
       <DependentUpon>Home2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="orgEdit.aspx.cs">
       <DependentUpon>orgEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -279,6 +288,13 @@
       <DependentUpon>orgHomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

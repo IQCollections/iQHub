@@ -56,15 +56,15 @@
                     </ul>
 
                     <ul class="nav navbar-nav pull-right">
-                        <li data-toggle="modal" data-target="#userModal"><a>User</a></li>
-                        <li data-toggle="modal" data-target="#organisationModal"><a>Organisation</a></li>
+                        <li> <a runat="server" href="~/User">Register</a></li>
+                        <li><a runat="server" href="~/orgEditPage">Organisation</a></li>
                         <li><a runat="server" href="~/orgEdit">Account</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- Modal -->
-        <div id="userModal" class="modal fade" role="dialog">
+        <%--<div id="userModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
                 <!-- Modal content-->
@@ -128,10 +128,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
 
         <!--Modal -->
-        <div id="organisationModal" class="modal fade" role="dialog">
+        <%--<div id="organisationModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
                 <!-- Modal Content -->
@@ -214,7 +214,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
 
 
         <div class="container body-content">
