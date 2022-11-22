@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="User.aspx.cs" Inherits="iQHub.Register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Organisation.aspx.cs" Inherits="iQHub.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -176,8 +176,8 @@
         <h3>User</h3>
 
         <div class="tab">
-            <button type="button" id="btnReg" class="tablinks" onclick="openUser(event, 'Register')">Register</button>
-            <button type="button" id="btnLog" class="tablinks" onclick="openUser(event, 'Login')">Login</button>
+            <button type="button" class="tablinks" onclick="openUser(event, 'Register')">Register</button>
+            <button type="button" class="tablinks" onclick="openUser(event, 'Login')">Login</button>
 
         </div>
 
@@ -187,29 +187,28 @@
                 <form action="/">
                     <hr>
 
-                    <hr>
                     <label id="icon" for="name"><i class="fa fa-envelope"></i></label>
-                    <%--<input id="txtEmailReg" type="text" name="name"  placeholder="User Email" required />--%>
-                    <asp:TextBox ID="txtEmailReg" runat="server" placeholder="User Email" required></asp:TextBox>
+                    <asp:TextBox ID="txtEmailReg" runat="server" placeholder="Email" required></asp:TextBox>
                     <label id="icon" for="name"><i class="fa fa-user"></i></label>
-                    <%--<input id="txtUsernameReg" type="text" name="name" placeholder="User Name" required />--%>
-                    <asp:TextBox ID="txtUsernameReg" runat="server" placeholder="User Name" required></asp:TextBox>
+                    <asp:TextBox ID="txtNameReg" runat="server" placeholder="Name" required></asp:TextBox>
                     <label id="icon" for="name"><i class="fa fa-unlock-alt"></i></label>
-
-                    <asp:TextBox ID="txtPassReg" TextMode="Password" runat="server" placeholder="User Password" required></asp:TextBox>
+                    <asp:TextBox ID="txtPassReg" TextMode="Password" runat="server" placeholder="Password" required></asp:TextBox>
+                    <label id="icon" for="name"><i class="fa fa-map-marker"></i></label>
+                    <asp:TextBox ID="txtLocationReg" TextMode="Password" runat="server" placeholder="Location" required></asp:TextBox>
+                    <label id="icon" for="name"><i class="fa fa-sitemap"></i></label>
+                    <asp:TextBox ID="txtCatReg" TextMode="Password" runat="server" placeholder="Category" required></asp:TextBox>
                     <hr>
                     <hr>
                     <div class="btn-block">
-                      
-                        <asp:Button ID="Button1" runat="server" Text="Register" align="center" OnClick="btnRegister_Click" Width="80px"/>
-                        <asp:Label ID="Label1" runat="server" Text="" Visible="false"></asp:Label>
+
+                        <%--<button type="submit" href="/">Submit</button>--%>
+                        <button id="btnRegister" runat="server" align="center" onclick="btnRegister_Click">Register</button>
                         <hr />
-                        
+                        <asp:Label ID="lblMsgReg" runat="server" Text="" Visible="false"></asp:Label>
                     </div>
                 </form>
             </div>
         </div>
-        <asp:Label ID="lblMsgReg" runat="server" Text="" Visible="false"></asp:Label>
 
         <div id="Login" class="tabcontent" style="display: none">
             <div class="main-block">
@@ -217,28 +216,26 @@
                 <form action="/">
                     <hr>
 
-                    <hr>
                     <label id="icon" for="name"><i class="fa fa-envelope"></i></label>
-
                     <asp:TextBox ID="txtEmailLog" runat="server" placeholder="User Email" required></asp:TextBox>
                     <label id="icon" for="name"><i class="fa fa-user"></i></label>
-
                     <asp:TextBox ID="txtUsernameLog" runat="server" placeholder="User Email" required></asp:TextBox>
                     <label id="icon" for="name"><i class="fa fa-unlock-alt"></i></label>
-
                     <asp:TextBox ID="txtPassLog" runat="server" placeholder="User Email" required></asp:TextBox>
+                    <label id="icon" for="name"><i class="fa fa-map-marker"></i></label>
+                    <asp:TextBox ID="txtLocationLog" TextMode="Password" runat="server" placeholder="Location" required></asp:TextBox>
+                    <label id="icon" for="name"><i class="fa fa-sitemap"></i></label>
+                    <asp:TextBox ID="txtCatLog" TextMode="Password" runat="server" placeholder="Category" required></asp:TextBox>
                     <hr>
                     <hr>
                     <div class="btn-block">
-                        <button id="btnLogin" runat="server" onclick="btnLogin_Click" width="80px">Login</button>
+                        <button id="btnLogin" runat="server" align="center" onclick="btnLogin_Click">Login</button>
                         <hr />
-                        
+                        <asp:Label ID="lblMsgLog" runat="server" Text="" Visible="false"></asp:Label>
                     </div>
                 </form>
             </div>
         </div>
-        <asp:Label ID="lblMsgLog" runat="server" Text="" Visible="false"></asp:Label>
-
 
         <script>
             function openUser(evt, cityName) {
@@ -258,5 +255,6 @@
 
     </body>
     </html>
-    
+
+
 </asp:Content>

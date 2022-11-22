@@ -11,7 +11,7 @@ namespace iQHub
 {
 
 
-    public partial class Register
+    public partial class Login
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace iQHub
         protected global::System.Web.UI.WebControls.TextBox txtEmailReg;
 
         /// <summary>
-        /// txtUsernameReg control.
+        /// txtNameReg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsernameReg;
+        protected global::System.Web.UI.WebControls.TextBox txtNameReg;
 
         /// <summary>
         /// txtPassReg control.
@@ -42,22 +42,31 @@ namespace iQHub
         protected global::System.Web.UI.WebControls.TextBox txtPassReg;
 
         /// <summary>
-        /// Button1 control.
+        /// txtLocationReg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox txtLocationReg;
 
         /// <summary>
-        /// Label1 control.
+        /// txtCatReg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.TextBox txtCatReg;
+
+        /// <summary>
+        /// btnRegister control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnRegister;
 
         /// <summary>
         /// lblMsgReg control.
@@ -94,6 +103,24 @@ namespace iQHub
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassLog;
+
+        /// <summary>
+        /// txtLocationLog control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLocationLog;
+
+        /// <summary>
+        /// txtCatLog control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCatLog;
 
         /// <summary>
         /// btnLogin control.

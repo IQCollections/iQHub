@@ -10,54 +10,90 @@ namespace iQHub
 {
     public partial class Login : System.Web.UI.Page
     {
+        private static string orgLogin;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (IsPostBack)
-            //{
-            //    using (SqlConnection con = new SqlConnection(SiteMaster.connString))
-            //    {
-            //        try
-            //        {
-            //            con.Open();
-            //            string chkUser = "select count(*) from dbo.Users where userEmail = '" + TxtUserEmailSign.Text + "'";
-            //            SqlCommand cmd = new SqlCommand(chkUser, con);
-            //            int temp = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-            //            if (temp == 1)
-            //            {
-            //                //lblMsgUSign.Visible = true;
-            //                //lblMsgUSign.Text = "User Already Exists ";
-            //            }
+            lblMsgReg.Visible = false;
+            if (IsPostBack)
+            {
+                SqlConnection con = new SqlConnection(SiteMaster.connString);// connection string to connect to database
+                con.Open();// open the connection
+                string checkuser = "select count(*) from Organisation where orgEmail = '" + txtEmailReg.Text + "' ";//sql query
+                SqlCommand com = new SqlCommand(checkuser, con);
+                int temp = Convert.ToInt32(com.ExecuteScalar().ToString());// executes the query
+                if (temp == 1)
+                {
+                    //checks for user existence
+                    lblMsgReg.Visible = true;
+                    lblMsgReg.Text = "User already Exists";
 
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            //lblMsgSign.Text = ex.Message.ToString();
-            //        }
-            //    }
-            //}
-            //if (IsPostBack)
-            //{
-            //    using (SqlConnection con = new SqlConnection(SiteMaster.connString))
-            //    {
-            //        try
-            //        {
-            //            con.Open();
-            //            string chkUser = "select count(*) from dbo.Organisation where orgEmail = '" + TxtOrgEmailSign.Text + "'";
-            //            SqlCommand cmd = new SqlCommand(chkUser, con);
-            //            int temp = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-            //            if (temp == 1)
-            //            {
-            //                //lblMsgSign.Visible = true;
-            //                //lblMsgSign.Text = "User Already Exists ";
-            //            }
+                }
+                con.Close();// closes the connection
+            }
+        }
 
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            //lblMsgSign.Text = ex.Message.ToString();
-            //        }
-            //    }
-            //}
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            try //try for exception handling
+            {
+                SqlConnection con = new SqlConnection(SiteMaster.connString);// connection string to connect to db
+                con.Open();// open the connection 
+                string insert = "INSERT INTO dbo.Organisation (orgEmail, orgName, orgPassword, orgLocation, orgCatergory) VALUES (@orgEmail, @orgName, @orgPassword, @orgLocation, @orgCat)";// sql query to insert the data
+                SqlCommand com = new SqlCommand(insert, con);
+                com.Parameters.AddWithValue("@orgEmail", txtEmailReg.Text);
+                com.Parameters.AddWithValue("@orgName", txtNameReg.Text);
+                com.Parameters.AddWithValue("@orgPassword", Hashing.hashPassword(txtPassReg.Text));
+                com.Parameters.AddWithValue("@orgLocation", txtLocationReg.Text);
+                com.Parameters.AddWithValue("@orgCat", txtCatReg.Text);
+                
+                com.ExecuteNonQuery();//executing the query
+                lblMsgReg.Visible = true;
+                lblMsgReg.Text = "Registration is successful";//display msg if succesful
+
+                con.Close();// closes the connection
+
+            }
+            catch (Exception error)// catches the error
+            {
+                lblMsgReg.Visible = true;
+                lblMsgReg.Text = "error" + error.ToString();// displays error msg
+
+            }
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            orgLogin = txtEmailLog.Text;// assigning value to the variable 
+            SqlConnection con = new SqlConnection(SiteMaster.connString);// connection string to connect to the db
+            con.Open();// opens the connection to db
+            string checkOrg = "SELECT count(*) from Organisation where orgEmail = '" + txtEmailLog.Text + "'";// sql query 
+            SqlCommand com = new SqlCommand(checkOrg, con);
+            int temp = Convert.ToInt32(com.ExecuteScalar().ToString());// executes the query
+            con.Close();//closes the connection
+            if (temp == 1)
+            {
+                con.Open();// opens the connection 
+                string chkPass = "select orgPassword from Organisation where orgEmail = '" + txtEmailLog.Text + "'";// sql query 
+                SqlCommand passCom = new SqlCommand(chkPass, con);
+                string password = passCom.ExecuteScalar().ToString().Replace(" ", "");// executes the query
+                if (password == txtPassLog.Text)
+                {
+                    lblMsgLog.Visible = true;
+                    lblMsgLog.Text = "Details entered is correct";// checks if password is correct
+                    Response.Redirect("Home2.aspx");// redirects user to main page
+                }
+                else
+                {
+                    lblMsgLog.Visible = true;
+                    lblMsgLog.Text = "Details entered is incorrect";// displays error msg
+                }
+            }
+            else
+            {
+                lblMsgLog.Visible = true;
+                lblMsgLog.Text = "Details entered is incorrect";// displays error msg
+            }
+
         }
 
         //protected void signUpUser_Click(object sender, EventArgs e)
