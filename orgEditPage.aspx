@@ -3,115 +3,105 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <!DOCTYPE html>
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            body {
-                font-family: Arial;
-            }
 
-            /* Style the tab */
-            .tab {
-                overflow: hidden;
-                border: 1px solid #ccc;
-                background-color: #f1f1f1;
-            }
+<style>
+        body {
+            /*background: url(../Images/black.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;*/
+            /*color: #2ecc71;*/
+            /*color: #2ecc71;*/
+            font-size: 35px;
+            font-family: 'Times New Roman';
+            font-weight: bold;
+            font-style: italic;
+        }
 
-                /* Style the buttons inside the tab */
-                .tab button {
-                    background-color: inherit;
-                    float: left;
-                    border: none;
-                    outline: none;
-                    cursor: pointer;
-                    padding: 14px 16px;
-                    transition: 0.3s;
-                    font-size: 17px;
-                }
+        label{
+            color:  #e74c3c;
+            font-size: 35px;
+            font-family: 'Times New Roman';
+            font-weight: bold;
+            font-style: italic;
+        }
 
-                    /* Change background color of buttons on hover */
-                    .tab button:hover {
-                        background-color: #ddd;
-                    }
+        button{
+            color: #2ecc71;
+            font-size: 20px;
+            font-family: 'Times New Roman';
+            font-weight: bold;
+        }
+        body{
+            background-color:     #1c2833;
+            color:  #f0f3f4 ;
+        }
+        table{
+            border: #3498db;
+            border-width: medium;
+            border-block-style: ridge;
+        }
+        
+    .auto-style1 {
+        width: 177px;
+        color: red;
+    }
+        
+    .auto-style2 {
+        width: 661px;
+    }
+        
+    </style>
 
-                    /* Create an active/current tablink class */
-                    .tab button.active {
-                        background-color: #ccc;
-                    }
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head >
+    <title></title>
+</head>
+<body>
+    <form id="form1">
+        <div>
+            <h1 align="center">Registration</h1>
+            <table align="center">
+                <tr>
+                    <td class="auto-style1">Email</td>
+                    <td><asp:TextBox ID="txtEmail" runat="server" Width="150px" ></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Email is Required" ControlToValidate="txtUsername"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">Username</td>
+                    <td><asp:TextBox ID="txtUsername" runat="server" Width="150px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Username is Required" ControlToValidate="txtUsername"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
 
-            /* Style the tab content */
-            .tabcontent {
-                display: none;
-                padding: 6px 12px;
-                -webkit-animation: fadeEffect 1s;
-                animation: fadeEffect 1s;
-            }
-
-            /* Fade in tabs */
-            @-webkit-keyframes fadeEffect {
-                from {
-                    opacity: 0;
-                }
-
-                to {
-                    opacity: 1;
-                }
-            }
-
-            @keyframes fadeEffect {
-                from {
-                    opacity: 0;
-                }
-
-                to {
-                    opacity: 1;
-                }
-            }
-        </style>
-    </head>
-    <body>
-
-        <h3>Fade in Tabs</h3>
-
-        <div class="tab">
-            <button type="button" class="tablinks" onclick="openCity(event, 'London')">London</button>
-            <button type="button" class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-            <button type="button" class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                <tr>
+                    <td class="auto-style1">Password</td>
+                    <td ><asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="150px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Password is Required" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                </table>
+            <table align="center">
+                <tr>
+                    <td class="auto-style2" align="center">
+                        <asp:Label ID="lblMsg" runat="server" Visible="False" ForeColor="Red"></asp:Label></td>
+                </tr>
+                </table>
+            <table align="center">
+                <tr>
+                    <td class="auto-style1" style="width:100px"><br/><br/>
+                        <asp:Button ID="btnRegister" runat="server" Text="Register" align="center" OnClick="btnRegister_Click" Width="80px"/></td>
+                    <td style="width:100px"><br/><br/>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">Login</asp:HyperLink>
+                    </td>
+                    
+                </tr>
+            </table>
         </div>
+    </form>
+</body>
+</html>
 
-        <div id="London" class="tabcontent">
-            <h3>London</h3>
-            <p>London is the capital city of England.</p>
-        </div>
-
-        <div id="Paris" class="tabcontent" style="display: none">
-            <h3>Paris</h3>
-            <p>Paris is the capital of France.</p>
-        </div>
-
-        <div id="Tokyo" class="tabcontent" style="display: none">
-            <h3>Tokyo</h3>
-            <p>Tokyo is the capital of Japan.</p>
-        </div>
-
-        <script>
-            function openCity(evt, cityName) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-                document.getElementById(cityName).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
-        </script>
-
-    </body>
-    </html>
 
 </asp:Content>
