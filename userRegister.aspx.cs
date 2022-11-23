@@ -48,6 +48,9 @@ namespace iQHub
                 lblMsg.Text = "Registration is successful";//display msg if succesful
 
                 con.Close();// closes the connection
+                txtEmail.Text = "";
+                txtUsername.Text = "";
+                txtPassword.Text = "";
 
             }
             catch (Exception error)// catches the error

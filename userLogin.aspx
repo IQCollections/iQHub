@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="userLogin.aspx.cs" Inherits="iQHub.orgEditPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="userLogin.aspx.cs" Inherits="iQHub.userLogin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -11,7 +11,7 @@
             margin: 200px;
             padding: 5px;
             font-family: 'Times New Roman';
-            font-weight: bold;
+            font-weight: bold; 
             font-style: italic;
         }
         body{

@@ -11,7 +11,7 @@ namespace iQHub
 {
 
 
-    public partial class orgEditPage
+    public partial class userLogin
     {
 
         /// <summary>

@@ -98,35 +98,35 @@
                     <tr>
                         <td>Email</td>
                         <td>
-                            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" runat="server" placeholder="Email"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Email is Required" ControlToValidate="txtUsername"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
                         <td>Username</td>
                         <td>
-                            <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtUsername" runat="server" placeholder="Username"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Username is Required" ControlToValidate="txtUsername"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
                         <td>Password</td>
                         <td>
-                            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Password"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Password is Required" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                    <tr>
                         <td>Location</td>
                         <td>
-                            <asp:TextBox ID="txtLocation" runat="server" ></asp:TextBox>
+                            <asp:TextBox ID="txtLocation" runat="server" placeholder="Location"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Location is Required" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
      <tr>
                         <td>Category</td>
                         <td>
-                            <asp:TextBox ID="txtCategory" runat="server" ></asp:TextBox>
+                            <asp:TextBox ID="txtCategory" runat="server" placeholder="Category(e.g. Orphanage, etc)"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Category is Required" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
                         </td>
                     </tr>

@@ -162,6 +162,7 @@
     <Content Include="orgEdit.aspx" />
     <Content Include="orgLogin.aspx" />
     <Content Include="orgRegister.aspx" />
+    <Content Include="userFav.aspx" />
     <Content Include="userLogin.aspx" />
     <Content Include="User.aspx" />
     <Content Include="Stats.aspx" />
@@ -288,6 +289,13 @@
     </Compile>
     <Compile Include="orgRegister.aspx.designer.cs">
       <DependentUpon>orgRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userFav.aspx.cs">
+      <DependentUpon>userFav.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userFav.aspx.designer.cs">
+      <DependentUpon>userFav.aspx</DependentUpon>
     </Compile>
     <Compile Include="userLogin.aspx.cs">
       <DependentUpon>userLogin.aspx</DependentUpon>
