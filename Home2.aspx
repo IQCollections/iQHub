@@ -17,7 +17,7 @@
         div.card {
             float: left;
 			width: 31%;
-            margin: 0px 1%;
+            margin: 0px 1% 50px 1%;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 		
@@ -84,6 +84,11 @@
 			background-color: #3e8e41;
 		}
 
+		.ddl
+		{
+			padding: 15px;
+		}
+
     </style>
 
     <div style="background-image: url(NatureImg2.jpg); height: 300px; padding: 100px 0px 0px 20%" >
@@ -93,16 +98,10 @@
     
 	<h1 style="font-size: 40px; text-align: center">Let us help you find an NGO</h1>
 	<div style="margin: 50px;">
-		<div class="dropdown">
-			<button class="dropbtn">Type of NGO</button>
-			<div class="dropdown-content">
-				<a href="#">Type 1</a>
-				<a href="#">Type 2</a>
-				<a href="#">Type 3</a>
-				<a href="#">Type 4</a>
-				<a href="#">Type 5</a>
-			</div>
-		</div>
+		<asp:DropDownList ID="drpbtnType" runat="server" Width="213px" BackColor="#4CAF50" ForeColor="White" Font-Size="Medium" CssClass="ddl" OnSelectedIndexChanged="drpbtnType_SelectedIndexChanged">
+		<asp:ListItem  Enabled="true" Text="Type of NGO" Value= "-1"></asp:ListItem>
+		</asp:DropDownList>
+
 		<div style="float: right">
 			<input type="text" placeholder="Search for NGO.." style="font-size: 20px;">
 		</div>
@@ -115,44 +114,34 @@
 			<h1 style="text-align: center; border-bottom: 4px solid deepskyblue; padding: 15px"><asp:HyperLink ID="Org1Name" NavigateUrl="#" runat="server"></asp:HyperLink></h1>
 			<div style="font-size: 30px; text-align: center"><asp:label ID="Org1Type" runat="server">What we do</asp:label></div>
 			<p><asp:label ID="Org1Descrip" runat="server">We are a baby clinic. We do what we do because it's what we do. Our values are: this, this, and this.</asp:label></P>
-			<p><b>Address:</b> 1 Street ave, Suburb, City</p>
-			<p><b>Contact:</b> 000 0000 0000 | ngo@ngo.ngo</p>
+			<p><b>Location:</b><asp:label ID="Org1Location" runat="server"> 1 Street ave, Suburb, City </asp:label></p>
+			<p><b>Contact:</b><asp:label ID="Org1Contact" runat="server"> ngo2@ngo.ngo </asp:label></p>
 			<p><b>What we need:</b> Baby clothes</p>
-			<p>-------IMAGE FROM ORGAINSATION HERE-------</p>
 		</div>
 		<div class="card">
-			<h1 style="text-align: center; border-bottom: 4px solid deepskyblue; padding: 15px"><a href="#">Organisation 2</a></h1>
-			<h2>What we do</h2>
+			<h1 style="text-align: center; border-bottom: 4px solid deepskyblue; padding: 15px"><asp:HyperLink ID="Org2Name" NavigateUrl="#" runat="server"></asp:HyperLink></h1>
+			<div style="font-size: 30px; text-align: center"><asp:label ID="Org2Type" runat="server">What we do</asp:label></div>
 			<p>We are an animal clinic. We do what we do because it's what we do. Our values are: this, this, and this.</P>
-			<p><b>Address:</b> 2 Street ave, Suburb, City</p>
-			<p><b>Contact:</b> 111 1111 1111 | ngo2@ngo.ngo</p>
+			<p><b>Location:</b><asp:label ID="Org2Location" runat="server"> 1 Street ave, Suburb, City </asp:label></p>
+			<p><b>Contact:</b><asp:label ID="Org2Contact" runat="server"> ngo2@ngo.ngo </asp:label></p>
 			<p><b>What we need:</b> Volunteers to walk dogs</p>
-			<p>-------IMAGE FROM ORGAINSATION HERE-------</p>
 		</div>
 		<div class="card">
-			<h1 style="text-align: center; border-bottom: 4px solid deepskyblue; padding: 15px"><a href="#">Organisation 3</a></h1>
-			<h2>What we do</h2>
+			<h1 style="text-align: center; border-bottom: 4px solid deepskyblue; padding: 15px"><asp:HyperLink ID="Org3Name" NavigateUrl="#" runat="server"></asp:HyperLink></h1>
+			<div style="font-size: 30px; text-align: center"><asp:label ID="Org3Type" runat="server">What we do</asp:label></div>
 			<p>We are nature preservationists. We do what we do because it's what we do. Our values are: this, this, and this.</P>
-			<p><b>Address:</b> 3 Street ave, Suburb, City</p>
-			<p><b>Contact:</b> 222 2222 2222 | ngo3@ngo.ngo</p>
+			<p><b>Location:</b><asp:label ID="Org3Location" runat="server"> 1 Street ave, Suburb, City </asp:label></p>
+			<p><b>Contact:</b><asp:label ID="Org3Contact" runat="server"> ngo2@ngo.ngo </asp:label></p>
 			<p><b>What we need:</b> Funds</p>
-			<p>-------IMAGE FROM ORGAINSATION HERE-------</p>
 		</div>
 	</div>
-	<button class="generalBtn"> Next Page</button>
+	<div style="margin:150px 50px"><asp:Button runat="server" ID="btnNext" Text="Next Page" BackColor="#4CAF50" ForeColor="White" Height="50px" Width="130px" OnClick="btnNext_Click"></asp:Button></div>
 	
 	<h1 style="font-size: 40px; text-align: center">How would you like to help out?</h1>
 	<div style="margin: 50px;">
-		<div class="dropdown">
-			<button class="dropbtn">Needs of NGOs</button>
-			<div class="dropdown-content">
-				<a href="#">Type 1</a>
-				<a href="#">Type 2</a>
-				<a href="#">Type 3</a>
-				<a href="#">Type 4</a>
-				<a href="#">Type 5</a>
-			</div>
-		</div>
+		<asp:DropDownList ID="drpbtnNeeds" runat="server" Width="213px" BackColor="#4CAF50" ForeColor="White" Font-Size="Medium" CssClass="ddl" OnSelectedIndexChanged="drpbtnNeeds_SelectedIndexChanged" >
+			<asp:ListItem Enabled="true" Text="Needs of NGO" Value= "-1"></asp:ListItem>
+		</asp:DropDownList>
 		<div style="float: right">
 			<input type="text" placeholder="Search for need.." style="font-size: 20px;">
 		</div>
@@ -189,6 +178,6 @@
 			<p>-------IMAGE FROM ORGAINSATION HERE-------</p>
 		</div>
 	</div>
-	<button class="generalBtn"> Next Page</button>
+	<div style="margin:150px 50px"><asp:Button runat="server" ID="btnNext2" Text="Next Page" BackColor="#4CAF50" ForeColor="White" Height="50px" Width="130px" OnClick="btnNext_Click"></asp:Button></div>
 	
 </asp:Content>

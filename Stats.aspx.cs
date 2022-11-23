@@ -26,21 +26,20 @@ namespace iQHub
         {
             DataTable dt = new DataTable();
             DataTable dt2 = new DataTable();
-            string sqlCon = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ABC\source\repos\iQHub\App_Data\Xbcad.mdf;Integrated Security=True";
+            SqlConnection con = new SqlConnection(SiteMaster.connString);
             string sqlCmd = "SELECT TOP (5) [orgName],[pageVisits] FROM [dbo].[Organisation] ORDER BY [pageVisits] DESC";
             string sqlCmd2 = "SELECT TOP (5) [orgName],[orgDonated] FROM [dbo].[Organisation] ORDER BY [orgDonated] DESC";
-            using (SqlConnection con = new SqlConnection(sqlCon))
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(sqlCmd, con);
-                SqlCommand cmd2 = new SqlCommand(sqlCmd2, con);
+            
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sqlCmd, con);
+            SqlCommand cmd2 = new SqlCommand(sqlCmd2, con);
 
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(dt);
-                SqlDataAdapter adapter2 = new SqlDataAdapter(cmd2);
-                adapter2.Fill(dt2);
-                con.Close();
-            };
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            SqlDataAdapter adapter2 = new SqlDataAdapter(cmd2);
+            adapter2.Fill(dt2);   
+            con.Close();
+            
             string[] x = new string[dt.Rows.Count];
             string[] x2 = new string[dt.Rows.Count];
             int[] y = new int[dt2.Rows.Count];

@@ -12,7 +12,7 @@ namespace iQHub
     public partial class SiteMaster : MasterPage
     {
         //public static string user_Login;
-        public static string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ABC\source\repos\iQHub\App_Data\Xbcad.mdf;Integrated Security=True";
+        public static string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\fletc\Desktop\Varsity\3rd Year\XBCAD\IQHub\App_Data\Xbcad.mdf;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
             //string userVal = Session["userEmail"] as string;
