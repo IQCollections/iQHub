@@ -173,7 +173,7 @@
     </head>
     <body>
 
-        <h3>User</h3>
+        <h3 align="center">User</h3>
 
         <div class="tab">
             <a href="/userRegister">

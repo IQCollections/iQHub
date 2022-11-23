@@ -36,7 +36,7 @@ namespace iQHub
             {
                 SqlConnection con = new SqlConnection(SiteMaster.connString);// connection string to connect to db
                 con.Open();// open the connection 
-                string insert = "INSERT INTO dbo.Organisation (orgEmail, orgName, orgPassword, orgLocation, orgCategory) VALUES (@orgEmail, @orgName, @orgPassword, @orgLocation, @orgCat)";// sql query to insert the data
+                string insert = "INSERT INTO dbo.Organisation (orgEmail, orgName, orgPassword, orgLocation, orgCategory, isApproved, orgDonated, pageVisits) VALUES (@orgEmail, @orgName, @orgPassword, @orgLocation, @orgCat, 'true', 10, 1)";// sql query to insert the data
                 SqlCommand com = new SqlCommand(insert, con);
                 com.Parameters.AddWithValue("@orgEmail", txtEmail.Text);
                 com.Parameters.AddWithValue("@orgName", txtUsername.Text);
@@ -49,6 +49,11 @@ namespace iQHub
                 lblMsg.Text = "Registration is successful";//display msg if succesful
 
                 con.Close();// closes the connection
+
+                txtEmail.Text = "";
+                txtUsername.Text = "";
+                txtLocation.Text = "";
+                txtCategory.Text = "";
 
             }
             catch (Exception error)// catches the error
