@@ -33,24 +33,34 @@ namespace iQHub
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            userLogin = txtEmail.Text;// assigning value to the variable 
-            SqlConnection con = new SqlConnection(SiteMaster.connString);// connection string to connect to the db
-            con.Open();// opens the connection to db
-            string checkuser = "select count(*) from Users where userEmail = '" + userLogin + "' ";// sql query 
-            SqlCommand com = new SqlCommand(checkuser, con);
-            int temp = Convert.ToInt32(com.ExecuteScalar().ToString());// executes the query
-            con.Close();//closes the connection
-            if (temp == 1)
+            try
             {
-                con.Open();// opens the connection 
-                string chkPass = "select userPassword from Users where userEmail = '" + userLogin + "' ";// sql query 
-                SqlCommand passCom = new SqlCommand(chkPass, con);
-                string password = passCom.ExecuteScalar().ToString().Replace(" ", "");// executes the query
-                if (password == Hashing.hashPassword(txtPassword.Text))
+
+
+                userLogin = txtEmail.Text;// assigning value to the variable 
+                SqlConnection con = new SqlConnection(SiteMaster.connString);// connection string to connect to the db
+                con.Open();// opens the connection to db
+                string checkuser = "select count(*) from Users where userEmail = '" + userLogin + "' ";// sql query 
+                SqlCommand com = new SqlCommand(checkuser, con);
+                int temp = Convert.ToInt32(com.ExecuteScalar().ToString());// executes the query
+                con.Close();//closes the connection
+                if (temp == 1)
                 {
-                    lblMsg.Visible = true;
-                    lblMsg.Text = "Details entered is correct";// checks if password is correct
-                    Page.Response.Redirect("Home2.aspx");// redirects user to main page
+                    con.Open();// opens the connection 
+                    string chkPass = "select userPassword from Users where userEmail = '" + userLogin + "' ";// sql query 
+                    SqlCommand passCom = new SqlCommand(chkPass, con);
+                    string password = passCom.ExecuteScalar().ToString().Replace(" ", "");// executes the query
+                    if (password == Hashing.hashPassword(txtPassword.Text))
+                    {
+                        lblMsg.Visible = true;
+                        lblMsg.Text = "Details entered is correct";// checks if password is correct
+                        Page.Response.Redirect("Home2.aspx");// redirects user to main page
+                    }
+                    else
+                    {
+                        lblMsg.Visible = true;
+                        lblMsg.Text = "Details entered is incorrect";// displays error msg
+                    }
                 }
                 else
                 {
@@ -58,10 +68,10 @@ namespace iQHub
                     lblMsg.Text = "Details entered is incorrect";// displays error msg
                 }
             }
-            else
+            catch (Exception ex)
             {
-                lblMsg.Visible = true;
-                lblMsg.Text = "Details entered is incorrect";// displays error msg
+                lblMsg.Visible=true;
+                lblMsg.Text = "Details entered is incorrect" + ex.Message;
             }
 
         }

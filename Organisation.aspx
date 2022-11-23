@@ -173,85 +173,19 @@
     </head>
     <body>
 
-        <h3>User</h3>
+        <h3>Organisation</h3>
 
         <div class="tab">
-            <button type="button" class="tablinks" onclick="openUser(event, 'Register')">Register</button>
-            <button type="button" class="tablinks" onclick="openUser(event, 'Login')">Login</button>
-
+            <a href="/orgRegister">
+                <button type="button" id="btnReg" class="tablinks" ">Register</button>
+            </a>
+            
+            <a href="/orgLogin">
+            <button type="button" id="btnLog" class="tablinks">Login</button>
+</a>
         </div>
 
-        <div id="Register" class="tabcontent" style="display: none">
-            <div class="main-block">
-                <h1>Registration</h1>
-                <form action="/">
-                    <hr>
-
-                    <label id="icon" for="name"><i class="fa fa-envelope"></i></label>
-                    <asp:TextBox ID="txtEmailReg" runat="server" placeholder="Email" required></asp:TextBox>
-                    <label id="icon" for="name"><i class="fa fa-user"></i></label>
-                    <asp:TextBox ID="txtNameReg" runat="server" placeholder="Name" required></asp:TextBox>
-                    <label id="icon" for="name"><i class="fa fa-unlock-alt"></i></label>
-                    <asp:TextBox ID="txtPassReg" TextMode="Password" runat="server" placeholder="Password" required></asp:TextBox>
-                    <label id="icon" for="name"><i class="fa fa-map-marker"></i></label>
-                    <asp:TextBox ID="txtLocationReg" TextMode="Password" runat="server" placeholder="Location" required></asp:TextBox>
-                    <label id="icon" for="name"><i class="fa fa-sitemap"></i></label>
-                    <asp:TextBox ID="txtCatReg" TextMode="Password" runat="server" placeholder="Category" required></asp:TextBox>
-                    <hr>
-                    <hr>
-                    <div class="btn-block">
-
-                        <%--<button type="submit" href="/">Submit</button>--%>
-                        <button id="btnRegister" runat="server" align="center" onclick="btnRegister_Click">Register</button>
-                        <hr />
-                        <asp:Label ID="lblMsgReg" runat="server" Text="" Visible="false"></asp:Label>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div id="Login" class="tabcontent" style="display: none">
-            <div class="main-block">
-                <h1>Login</h1>
-                <form action="/">
-                    <hr>
-
-                    <label id="icon" for="name"><i class="fa fa-envelope"></i></label>
-                    <asp:TextBox ID="txtEmailLog" runat="server" placeholder="User Email" required></asp:TextBox>
-                    <label id="icon" for="name"><i class="fa fa-user"></i></label>
-                    <asp:TextBox ID="txtUsernameLog" runat="server" placeholder="User Email" required></asp:TextBox>
-                    <label id="icon" for="name"><i class="fa fa-unlock-alt"></i></label>
-                    <asp:TextBox ID="txtPassLog" runat="server" placeholder="User Email" required></asp:TextBox>
-                    <label id="icon" for="name"><i class="fa fa-map-marker"></i></label>
-                    <asp:TextBox ID="txtLocationLog" TextMode="Password" runat="server" placeholder="Location" required></asp:TextBox>
-                    <label id="icon" for="name"><i class="fa fa-sitemap"></i></label>
-                    <asp:TextBox ID="txtCatLog" TextMode="Password" runat="server" placeholder="Category" required></asp:TextBox>
-                    <hr>
-                    <hr>
-                    <div class="btn-block">
-                        <button id="btnLogin" runat="server" align="center" onclick="btnLogin_Click">Login</button>
-                        <hr />
-                        <asp:Label ID="lblMsgLog" runat="server" Text="" Visible="false"></asp:Label>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <script>
-            function openUser(evt, cityName) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-                document.getElementById(cityName).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
-        </script>
+        
 
     </body>
     </html>

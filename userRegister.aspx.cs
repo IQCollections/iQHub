@@ -53,7 +53,7 @@ namespace iQHub
             catch (Exception error)// catches the error
             {
                 lblMsg.Visible = true;
-                lblMsg.Text = "error" + error.ToString();// displays error msg
+                lblMsg.Text = "Error User already Exists" ;// displays error msg
 
             }
 

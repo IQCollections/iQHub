@@ -7,15 +7,15 @@
 
         div .label{
             color:  #e74c3c;
-            font-size: 35px;
-            margin: 20px;
+            font-size: 30px;
+            margin: 200px;
             padding: 5px;
             font-family: 'Times New Roman';
             font-weight: bold;
             font-style: italic;
         }
         body{
-            
+            font-family: 'Times New Roman';
             color:  black ;
         }
         .card {
@@ -65,6 +65,7 @@
 
         div .button {
             display: flex;
+            font-size: 20px;
             flex-direction: row;
             width: 200px;
             justify-content: space-between;
@@ -89,7 +90,7 @@
 <body>
     <form id="form1" >
         <div class="card">
-            <h1 align="center">Login</h1>
+            <h1 align="center">User Login</h1>
             <br />
             <br />
             
