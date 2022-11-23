@@ -17,7 +17,7 @@
                 padding: 0px;
                 width: 220px;
                 position: fixed;
-                height: 60%;
+                height: 40%;
                 overflow: auto;
                 border-radius: 10px;
                 border: 2px;
@@ -273,13 +273,7 @@
                     <button type="button" class="tablinks">View Statistics </button>
                 </a>
             </div>
-            <div class="menu-header">
-                <p class="menu-head">Account Details</p>
-            </div>
-            <div class="tab">
-                <button type="button" class="tablinks" onclick="openEdit(event, 'orgDetail')">Personal Information</button>
-
-            </div>
+           
         </div>
 
 
