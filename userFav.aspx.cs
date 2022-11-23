@@ -12,7 +12,7 @@ namespace iQHub
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["userEmail"] = orgLogin.org_Login;
+            Session["userEmail"] = userLogin.user_Login;
             if (Session["userEmail"] == null)
             {
                 Response.Redirect("userLogin.aspx");
