@@ -69,17 +69,15 @@
 
         <form id="form1">
             <div class="w3-row-padding w3-padding-64 w3-container">
-                <asp:GridView CssClass="table table-condensed table-hover" ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="1335px" OnRowDeleting="GridView1_RowDeleting">
+                <asp:GridView CssClass="table table-condensed table-hover" ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="1335px" OnRowDeleting="GridView1_RowDeleting" DataKeyNames="savedID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
-                        <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-                        <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                        <asp:BoundField DataField="savedID" HeaderText="savedID" SortExpression="savedID" InsertVisible="False" ReadOnly="True" />
+                        <asp:BoundField DataField="userEmail" HeaderText="userEmail" SortExpression="userEmail" />
+                        <asp:BoundField DataField="orgID" HeaderText="orgID" SortExpression="orgID" />
                         <asp:CommandField ButtonType="Button" ShowDeleteButton="True">
-                            <ControlStyle BackColor="#FF3300" />
+                        <ControlStyle BackColor="Red" ForeColor="Black" />
                         </asp:CommandField>
-                        <asp:ButtonField ButtonType="Button" Text="View">
-                            <ControlStyle BackColor="#0033CC" />
-                        </asp:ButtonField>
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -93,7 +91,7 @@
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
             </div>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [saveORG]"></asp:SqlDataSource>
 
             </div>
         </form>
