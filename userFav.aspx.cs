@@ -12,7 +12,7 @@ namespace iQHub
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["userEmail"] = orgLogin.org_Login;
+            Session["userEmail"] = userLogin.user_Login;
             if (Session["userEmail"] == null)
             {
                 Response.Redirect("userLogin.aspx");
@@ -21,7 +21,7 @@ namespace iQHub
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string id = GridView1.DataKeys[e.RowIndex].Value.ToString();
-            string userid = "";
+            string userid = Session["userEmail"].ToString();
             using (SqlConnection con = new SqlConnection(SiteMaster.connString))
             {
                 con.Open();
@@ -31,6 +31,8 @@ namespace iQHub
                 con.Close();
             }
         }
+
+       
     }
 
 }
