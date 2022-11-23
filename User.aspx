@@ -176,7 +176,10 @@
         <h3>User</h3>
 
         <div class="tab">
-            <button type="button" id="btnReg" class="tablinks" onclick="openUser(event, 'Register')">Register</button>
+            <a href="/userRegister">
+                <button type="button" id="btnReg" class="tablinks" ">Register</button>
+            </a>
+            
             <a href="/userLogin">
             <button type="button" id="btnLog" class="tablinks">Login</button>
 </a>
@@ -251,12 +254,12 @@
                 tablinks = document.getElementsByClassName("tablinks");
                 for (i = 0; i < tablinks.length; i++) {
                     tablinks[i].className = tablinks[i].className.replace(" active", "");
-                    
+
                 }
-                
+
                 document.getElementById(cityName).style.display = "block";
                 evt.currentTarget.className += " active";
-                
+
             }
         </script>
 

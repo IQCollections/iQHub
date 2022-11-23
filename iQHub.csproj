@@ -165,6 +165,7 @@
     <Content Include="User.aspx" />
     <Content Include="Stats.aspx" />
     <Content Include="userFavourites.aspx" />
+    <Content Include="userRegister.aspx" />
     <Content Include="xbcad icons\ic_clothes.png" />
     <Content Include="xbcad icons\ic_details.png" />
     <Content Include="xbcad icons\ic_donate.png" />
@@ -322,6 +323,13 @@
     </Compile>
     <Compile Include="userFavourites.aspx.designer.cs">
       <DependentUpon>userFavourites.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userRegister.aspx.cs">
+      <DependentUpon>userRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userRegister.aspx.designer.cs">
+      <DependentUpon>userRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

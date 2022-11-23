@@ -125,19 +125,10 @@
                 <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="80px" />
                     
                         <div class="btn-link">
-                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Registration.aspx">Register</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/userRegister.aspx">Register</asp:HyperLink>
             </div>
             </div>
-            
-                
-            <%--<table align="center">
-                <tr>
-                    <td style="width:100px"><br/><br/>--%>
-                        
-                   <%-- </td>
-                    
-                </tr>
-            </table>--%>
+
             <br />
            
         </div>
