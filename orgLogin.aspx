@@ -6,7 +6,7 @@
         div .label {
             color: #e74c3c;
             font-size: 30px;
-            margin: 50px;
+            margin: 200px;
             padding: 5px;
             font-family: 'Times New Roman';
             font-weight: bold;
@@ -116,20 +116,7 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Password is Required" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Location</td>
-                        <td>
-                            <asp:TextBox ID="txtLocation" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Location is Required" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Category</td>
-                        <td>
-                            <asp:TextBox ID="txtCategory" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Category is Required" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
-                        </td>
-                    </tr>
+                   
                 </table>
 
                 <div class="label">
