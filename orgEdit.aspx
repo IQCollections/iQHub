@@ -255,13 +255,13 @@
                 
             </div>
 
-            <div class="menu-header">
+            <%--<div class="menu-header">
                 <p class="menu-head">Projects</p>
             </div>
             <div class="tab">
                 <button type="button" class="tablinks" onclick="openEdit(event, 'Completed')">Completed Projects</button>
                 <button type="button" class="tablinks" onclick="openEdit(event, 'Future')">Future Projects</button>
-            </div>
+            </div>--%>
             <div class="menu-header">
                 <p class="menu-head">Statistics</p>
             </div>
@@ -292,26 +292,35 @@
                         <h2>Project Details</h2>
                         <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataKeyNames="postID" DataSourceID="SqlDataSource1">
                             <Fields>
+                                <asp:BoundField DataField="postID" HeaderText="postID" SortExpression="postID" InsertVisible="False" ReadOnly="True" />
                                 <asp:BoundField DataField="orgID" HeaderText="orgID" SortExpression="orgID" />
                                 <asp:BoundField DataField="postTitle" HeaderText="postTitle" SortExpression="postTitle" />
                                 <asp:BoundField DataField="postDescription" HeaderText="postDescription" SortExpression="postDescription" />
-                                <asp:BoundField DataField="postID" HeaderText="postID" InsertVisible="False" ReadOnly="True" SortExpression="postID" />
                             </Fields>
                         </asp:DetailsView>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [posts] WHERE [postID] = @postID" InsertCommand="INSERT INTO [posts] ([orgID], [postTitle], [postDescription]) VALUES (@orgID, @postTitle, @postDescription)" SelectCommand="SELECT [orgID], [postTitle], [postDescription], [postID] FROM [posts]" UpdateCommand="UPDATE [posts] SET [orgID] = @orgID, [postTitle] = @postTitle, [postDescription] = @postDescription WHERE [postID] = @postID">
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [posts] WHERE [postID] = @original_postID AND [orgID] = @original_orgID AND [postTitle] = @original_postTitle AND (([postDescription] = @original_postDescription) OR ([postDescription] IS NULL AND @original_postDescription IS NULL))" InsertCommand="INSERT INTO [posts] ([orgID], [postTitle], [postDescription]) VALUES (@orgID, @postTitle, @postDescription)" SelectCommand="SELECT [postID], [orgID], [postTitle], [postDescription] FROM [posts] WHERE ([orgID] = @orgID)" UpdateCommand="UPDATE [posts] SET [orgID] = @orgID, [postTitle] = @postTitle, [postDescription] = @postDescription WHERE [postID] = @original_postID AND [orgID] = @original_orgID AND [postTitle] = @original_postTitle AND (([postDescription] = @original_postDescription) OR ([postDescription] IS NULL AND @original_postDescription IS NULL))" ConflictDetection="CompareAllValues" OldValuesParameterFormatString="original_{0}">
                             <DeleteParameters>
-                                <asp:Parameter Name="postID" Type="Int32" />
+                                <asp:Parameter Name="original_postID" Type="Int32" />
+                                <asp:Parameter Name="original_orgID" Type="Int32" />
+                                <asp:Parameter Name="original_postTitle" Type="String" />
+                                <asp:Parameter Name="original_postDescription" Type="String" />
                             </DeleteParameters>
                             <InsertParameters>
                                 <asp:Parameter Name="orgID" Type="Int32" />
                                 <asp:Parameter Name="postTitle" Type="String" />
                                 <asp:Parameter Name="postDescription" Type="String" />
                             </InsertParameters>
+                            <SelectParameters>
+                                <asp:SessionParameter Name="orgID" SessionField="@orgID" Type="Int32" />
+                            </SelectParameters>
                             <UpdateParameters>
                                 <asp:Parameter Name="orgID" Type="Int32" />
                                 <asp:Parameter Name="postTitle" Type="String" />
                                 <asp:Parameter Name="postDescription" Type="String" />
-                                <asp:Parameter Name="postID" Type="Int32" />
+                                <asp:Parameter Name="original_postID" Type="Int32" />
+                                <asp:Parameter Name="original_orgID" Type="Int32" />
+                                <asp:Parameter Name="original_postTitle" Type="String" />
+                                <asp:Parameter Name="original_postDescription" Type="String" />
                             </UpdateParameters>
                         </asp:SqlDataSource>
                         

@@ -173,89 +173,19 @@
     </head>
     <body>
 
-        <h3>User</h3>
+        <h3 align="center">User</h3>
 
         <div class="tab">
-            <button type="button" id="btnReg" class="tablinks" onclick="openUser(event, 'Register')">Register</button>
-            <button type="button" id="btnLog" class="tablinks" onclick="openUser(event, 'Login')">Login</button>
-
+            <a href="/userRegister">
+                <button type="button" id="btnReg" class="tablinks" ">Register</button>
+            </a>
+            
+            <a href="/userLogin">
+            <button type="button" id="btnLog" class="tablinks">Login</button>
+</a>
         </div>
 
-        <div id="Register" class="tabcontent" style="display: none">
-            <div class="main-block">
-                <h1>Registration</h1>
-                <form action="/">
-                    <hr>
-
-                    <hr>
-                    <label id="icon" for="name"><i class="fa fa-envelope"></i></label>
-                    <%--<input id="txtEmailReg" type="text" name="name"  placeholder="User Email" required />--%>
-                    <asp:TextBox ID="txtEmailReg" runat="server" placeholder="User Email" required></asp:TextBox>
-                    <label id="icon" for="name"><i class="fa fa-user"></i></label>
-                    <%--<input id="txtUsernameReg" type="text" name="name" placeholder="User Name" required />--%>
-                    <asp:TextBox ID="txtUsernameReg" runat="server" placeholder="User Name" required></asp:TextBox>
-                    <label id="icon" for="name"><i class="fa fa-unlock-alt"></i></label>
-
-                    <asp:TextBox ID="txtPassReg" TextMode="Password" runat="server" placeholder="User Password" required></asp:TextBox>
-                    <hr>
-                    <hr>
-                    <div class="btn-block">
-                      
-                        <asp:Button ID="Button1" runat="server" Text="Register" align="center" OnClick="btnRegister_Click" Width="80px"/>
-                        <asp:Label ID="Label1" runat="server" Text="" Visible="false"></asp:Label>
-                        <hr />
-                        
-                    </div>
-                </form>
-            </div>
-        </div>
-        <asp:Label ID="lblMsgReg" runat="server" Text="" Visible="false"></asp:Label>
-
-        <div id="Login" class="tabcontent" style="display: none">
-            <div class="main-block">
-                <h1>Login</h1>
-                <form action="/">
-                    <hr>
-
-                    <hr>
-                    <label id="icon" for="name"><i class="fa fa-envelope"></i></label>
-                    <asp:TextBox ID="txtEmailLog" runat="server" placeholder="User Email" required></asp:TextBox>
-                    <label id="icon" for="name"><i class="fa fa-user"></i></label>
-                    <asp:TextBox ID="txtUsernameLog" runat="server" placeholder="User Name" required></asp:TextBox>
-                    <label id="icon" for="name"><i class="fa fa-unlock-alt"></i></label>
-                    <asp:TextBox ID="txtPassLog" TextMode="Password" runat="server" placeholder="User Password" required></asp:TextBox>
-                    <hr>
-                    <hr>
-                    <div class="btn-block">
-                        
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="80px" />
-                        <hr />
-                        
-                    </div>
-                </form>
-            </div>
-        </div>
-        <asp:Label ID="lblMsgLog" runat="server" Text="" Visible="false"></asp:Label>
-
-
-        <script>
-            function openUser(evt, cityName) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                    
-                }
-                
-                document.getElementById(cityName).style.display = "block";
-                evt.currentTarget.className += " active";
-                
-            }
-        </script>
+        
 
     </body>
     </html>
