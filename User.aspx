@@ -28,6 +28,7 @@
                     padding: 14px 16px;
                     transition: 0.3s;
                     font-size: 17px;
+                    font-palette:dark;
                 }
 
                     /* Change background color of buttons on hover */
@@ -163,7 +164,7 @@
                 background: #1c87c9;
                 font-size: 14px;
                 font-weight: 600;
-                color: #fff;
+                color: darkred;
             }
 
                 button:hover {
