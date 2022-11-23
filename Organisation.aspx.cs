@@ -157,16 +157,16 @@ namespace iQHub
         //    {
         //        try
         //        {
-        //            SiteMaster.userLogin = TxtUserEmailLog.Text;
+        //            SiteMaster.user_Login = TxtUserEmailLog.Text;
         //            con.Open();
-        //            string chkUser = "SELECT * FROM dbo.Users WHERE userEmail ='" + SiteMaster.userLogin + "'";
+        //            string chkUser = "SELECT * FROM dbo.Users WHERE userEmail ='" + SiteMaster.user_Login + "'";
         //            SqlCommand cmd = new SqlCommand(chkUser, con);
         //            int temp = Convert.ToInt32(cmd.ExecuteScalar().ToString());
         //            con.Close();
         //            if (temp == 1)
         //            {
         //                con.Open();
-        //                string chkPass = "select userPassword from dbo.Users where userEmail ='" + SiteMaster.userLogin + "'";
+        //                string chkPass = "select userPassword from dbo.Users where userEmail ='" + SiteMaster.user_Login + "'";
         //                SqlCommand passCom = new SqlCommand(chkPass, con);
         //                string userPass = passCom.ExecuteScalar().ToString().Replace(" ", "");
         //                con.Close();
