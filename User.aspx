@@ -177,8 +177,9 @@
 
         <div class="tab">
             <button type="button" id="btnReg" class="tablinks" onclick="openUser(event, 'Register')">Register</button>
-            <button type="button" id="btnLog" class="tablinks" onclick="openUser(event, 'Login')">Login</button>
-
+            <a href="/userLogin">
+            <button type="button" id="btnLog" class="tablinks">Login</button>
+</a>
         </div>
 
         <div id="Register" class="tabcontent" style="display: none">
@@ -209,7 +210,7 @@
                 </form>
             </div>
         </div>
-        <asp:Label ID="lblMsgReg" runat="server" Text="" Visible="false"></asp:Label>
+        
 
         <div id="Login" class="tabcontent" style="display: none">
             <div class="main-block">
@@ -219,22 +220,24 @@
 
                     <hr>
                     <label id="icon" for="name"><i class="fa fa-envelope"></i></label>
-                    <asp:TextBox ID="txtEmailLog" runat="server" placeholder="User Email" required></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
                     <label id="icon" for="name"><i class="fa fa-user"></i></label>
-                    <asp:TextBox ID="txtUsernameLog" runat="server" placeholder="User Name" required></asp:TextBox>
+                    <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
                     <label id="icon" for="name"><i class="fa fa-unlock-alt"></i></label>
-                    <asp:TextBox ID="txtPassLog" TextMode="Password" runat="server" placeholder="User Password" required></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
                     <hr>
                     <hr>
                     <div class="btn-block">
-                        
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="80px" />
+                        <asp:Button ID="btnLogin" runat="server" Text="Register" align="center" OnClick="btnLogin_Click" Width="80px"/>
+                        <%--<asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="80px" />--%>
+
                         <hr />
                         
                     </div>
                 </form>
             </div>
         </div>
+        <asp:Label ID="lblMsgReg" runat="server" Text="" Visible="false"></asp:Label>
         <asp:Label ID="lblMsgLog" runat="server" Text="" Visible="false"></asp:Label>
 
 

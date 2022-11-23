@@ -64,7 +64,7 @@ namespace iQHub
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            userLogin = txtEmailLog.Text;// assigning value to the variable 
+            userLogin = txtEmail.Text;// assigning value to the variable 
             SqlConnection con = new SqlConnection(SiteMaster.connString);// connection string to connect to the db
             con.Open();// opens the connection to db
             string checkuser = "select count(*) from Users where userEmail = '" + userLogin + "' ";// sql query 
@@ -77,22 +77,22 @@ namespace iQHub
                 string chkPass = "select userPassword from Users where userEmail = '" + userLogin + "' ";// sql query 
                 SqlCommand passCom = new SqlCommand(chkPass, con);
                 string password = passCom.ExecuteScalar().ToString().Replace(" ", "");// executes the query
-                if (password == Hashing.hashPassword(txtPassLog.Text))
+                if (password == Hashing.hashPassword(txtPassword.Text))
                 {
-                    lblMsgLog.Visible = true;
-                    lblMsgLog.Text = "Details entered is correct";// checks if password is correct
-                    Page.Response.Redirect("orgEdit.aspx");// redirects user to main page
+                    //lblMsg.Visible = true;
+                    //lblMsg.Text = "Details entered is correct";// checks if password is correct
+                    Page.Response.Redirect("Home2.aspx");// redirects user to main page
                 }
                 else
                 {
-                    lblMsgLog.Visible = true;
-                    lblMsgLog.Text = "Details entered is incorrect";// displays error msg
+                    //lblMsg.Visible = true;
+                    //lblMsg.Text = "Details entered is incorrect";// displays error msg
                 }
             }
             else
             {
-                lblMsgLog.Visible = true;
-                lblMsgLog.Text = "Details entered is incorrect";// displays error msg
+                //lblMsg.Visible = true;
+                //lblMsg.Text = "Details entered is incorrect";// displays error msg
             }
 
         }
