@@ -25,7 +25,7 @@ namespace Sort
                 try
                 {
                     con.Open();
-                    SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM dbo.Organisation", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [Organisation]", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     foreach (DataRow row in dt.Rows)
