@@ -159,6 +159,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Home2.aspx" />
     <Content Include="HtmlPage1.html" />
+    <Content Include="orgAccount.aspx" />
     <Content Include="Organisation.aspx" />
     <Content Include="orgEdit.aspx" />
     <Content Include="orgLogin.aspx" />
@@ -262,6 +263,13 @@
     </Compile>
     <Compile Include="Home2.aspx.designer.cs">
       <DependentUpon>Home2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orgAccount.aspx.cs">
+      <DependentUpon>orgAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orgAccount.aspx.designer.cs">
+      <DependentUpon>orgAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Organisation.aspx.cs">
       <DependentUpon>Organisation.aspx</DependentUpon>

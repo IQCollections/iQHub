@@ -21,8 +21,6 @@ namespace iQHub
         {
             try
             {
-
-
                 org_Login = txtEmail.Text;// assigning value to the variable 
                 SqlConnection con = new SqlConnection(SiteMaster.connString);// connection string to connect to the db
                 con.Open();// opens the connection to db

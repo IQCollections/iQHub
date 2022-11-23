@@ -248,10 +248,13 @@
 
         <div class="sidebar">
             <div class="menu-header">
-                <p class="menu-head">Donations</p>
+                <p class="menu-head">Organisation</p>
             </div>
             <div class="tab">
-                <button type="button" class="tablinks" onclick="openEdit(event, 'Donation')">Current Projects</button>
+                <a href="/orgAccount">
+                    <button type="button" class="tablinks" >Personal Information</button>
+                </a>
+                
                 
             </div>
 
@@ -283,45 +286,29 @@
         <div class="main">
 
             <div id="Donation" class="tabcontent">
-                <h3>Donation</h3>
-                <p>Donation for the month</p>
+                
 
                 <div style="margin: 50px 0px 150px 0px">
                     <div class="card">
                         <h1 style="text-align: center; border-bottom: 4px solid deepskyblue; padding: 15px">Projects</h1>
                         <h2>Project Details</h2>
-                        <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataKeyNames="postID" DataSourceID="SqlDataSource1">
+                        <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataKeyNames="orgID" DataSourceID="SqlDataSource1">
                             <Fields>
-                                <asp:BoundField DataField="postID" HeaderText="postID" SortExpression="postID" InsertVisible="False" ReadOnly="True" />
-                                <asp:BoundField DataField="orgID" HeaderText="orgID" SortExpression="orgID" />
-                                <asp:BoundField DataField="postTitle" HeaderText="postTitle" SortExpression="postTitle" />
-                                <asp:BoundField DataField="postDescription" HeaderText="postDescription" SortExpression="postDescription" />
+                                <asp:BoundField DataField="orgID" HeaderText="orgID" SortExpression="orgID" InsertVisible="False" ReadOnly="True" />
+                                <asp:BoundField DataField="orgEmail" HeaderText="orgEmail" SortExpression="orgEmail" />
+                                <asp:BoundField DataField="orgName" HeaderText="orgName" SortExpression="orgName" />
+                                <asp:BoundField DataField="orgPassword" HeaderText="orgPassword" SortExpression="orgPassword" />
+                                <asp:BoundField DataField="orgLocation" HeaderText="orgLocation" SortExpression="orgLocation" />
+                                <asp:BoundField DataField="orgCategory" HeaderText="orgCategory" SortExpression="orgCategory" />
+                                <asp:CheckBoxField DataField="isApproved" HeaderText="isApproved" SortExpression="isApproved" />
+                                <asp:BoundField DataField="orgDonated" HeaderText="orgDonated" SortExpression="orgDonated" />
+                                <asp:BoundField DataField="pageVisits" HeaderText="pageVisits" SortExpression="pageVisits" />
                             </Fields>
                         </asp:DetailsView>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [posts] WHERE [postID] = @original_postID AND [orgID] = @original_orgID AND [postTitle] = @original_postTitle AND (([postDescription] = @original_postDescription) OR ([postDescription] IS NULL AND @original_postDescription IS NULL))" InsertCommand="INSERT INTO [posts] ([orgID], [postTitle], [postDescription]) VALUES (@orgID, @postTitle, @postDescription)" SelectCommand="SELECT [postID], [orgID], [postTitle], [postDescription] FROM [posts] WHERE ([orgID] = @orgID)" UpdateCommand="UPDATE [posts] SET [orgID] = @orgID, [postTitle] = @postTitle, [postDescription] = @postDescription WHERE [postID] = @original_postID AND [orgID] = @original_orgID AND [postTitle] = @original_postTitle AND (([postDescription] = @original_postDescription) OR ([postDescription] IS NULL AND @original_postDescription IS NULL))" ConflictDetection="CompareAllValues" OldValuesParameterFormatString="original_{0}">
-                            <DeleteParameters>
-                                <asp:Parameter Name="original_postID" Type="Int32" />
-                                <asp:Parameter Name="original_orgID" Type="Int32" />
-                                <asp:Parameter Name="original_postTitle" Type="String" />
-                                <asp:Parameter Name="original_postDescription" Type="String" />
-                            </DeleteParameters>
-                            <InsertParameters>
-                                <asp:Parameter Name="orgID" Type="Int32" />
-                                <asp:Parameter Name="postTitle" Type="String" />
-                                <asp:Parameter Name="postDescription" Type="String" />
-                            </InsertParameters>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Organisation] WHERE ([orgEmail] = @orgEmail)" OldValuesParameterFormatString="original_{0}">
                             <SelectParameters>
-                                <asp:SessionParameter Name="orgID" SessionField="@orgID" Type="Int32" />
+                                <asp:SessionParameter Name="orgEmail" SessionField="@orgEmail" Type="String" />
                             </SelectParameters>
-                            <UpdateParameters>
-                                <asp:Parameter Name="orgID" Type="Int32" />
-                                <asp:Parameter Name="postTitle" Type="String" />
-                                <asp:Parameter Name="postDescription" Type="String" />
-                                <asp:Parameter Name="original_postID" Type="Int32" />
-                                <asp:Parameter Name="original_orgID" Type="Int32" />
-                                <asp:Parameter Name="original_postTitle" Type="String" />
-                                <asp:Parameter Name="original_postDescription" Type="String" />
-                            </UpdateParameters>
                         </asp:SqlDataSource>
                         
                     </div>
