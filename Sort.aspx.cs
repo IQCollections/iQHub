@@ -25,9 +25,7 @@ namespace Sort
                 try
                 {
                     con.Open();
-                    string sortUserQuery = "SELECT orgDonated FROM dbo.Organisation ";
-                    SqlCommand cmd = new SqlCommand(sortUserQuery, con);
-                    SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM dbo.Organisation", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [Organisation]", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     foreach (DataRow row in dt.Rows)
@@ -40,11 +38,14 @@ namespace Sort
                     {
                         for (int k = (i + 1); k < sortList.Count; k++)
                         {
-                            if (sortList[i].CompareTo(sortList[k]) == 1)
+                            if (sortList[i] > sortList[k])
                             {
                                 string temp = DonationList[i];
                                 DonationList[i] = DonationList[k];
                                 DonationList[k] = temp;
+                                double temp2 = sortList[i];
+                                sortList[i] = sortList[k];
+                                sortList[k] = temp2;
                             }
                         }
                     }
@@ -53,7 +54,6 @@ namespace Sort
                         fullList = fullList + "" + DonationList[j] + "\n";
                     }
                     txtDisplay.Text = "" + fullList;
-                    cmd.ExecuteNonQuery();
                     con.Close();
                 }
                 catch (Exception)
