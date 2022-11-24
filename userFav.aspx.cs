@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -32,7 +33,23 @@ namespace iQHub
             }
         }
 
-       
+        protected void btnDonate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(SiteMaster.connString);
+                SqlCommand cmd = new SqlCommand("Insert into saveORG(orgID,userEmail)VALUES(@orgID,@userEmail)", con);
+                cmd.Parameters.AddWithValue("@orgID", txtID.Text);
+                cmd.Parameters.AddWithValue("@userEmail", Session["userEmail"]);
+                ;
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception err)
+            {
+            }
+        }
     }
 
 }

@@ -65,10 +65,28 @@
             <p class="w3-xlarge">This page shows the users favourites</p>
 
         </header>
+            
+    <table>
+        <tr>
+            <td class="auto-style1">
+                <asp:Label ID="lblID" runat="server" Text="Organisation ID:  "></asp:Label>
+            </td>
+            <td class="auto-style1">
+                <asp:TextBox ID="txtID" runat="server"></asp:TextBox>
+            </td>
+            <td class="auto-style1">
+                &nbsp;</td>
+            <td class="auto-style1">
+                &nbsp;</td><td class="auto-style1">           
+            <asp:Button ID="btnDonate" runat="server" Text="Add!" BorderStyle="Outset" BorderColor="Black" BorderWidth="3" ForeColor="White" BackColor="Blue" OnClick="btnDonate_Click" />
+            </td>
 
+        </tr>
 
         <form id="form1">
             <div class="w3-row-padding w3-padding-64 w3-container">
+                </form>
+        </table>
                 <asp:GridView CssClass="table table-condensed table-hover" ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="1335px" OnRowDeleting="GridView1_RowDeleting" DataKeyNames="savedID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
@@ -94,14 +112,14 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [saveORG]"></asp:SqlDataSource>
 
             </div>
-        </form>
+        <xxxxelmt>
+        </xxxxelmt>
         <!-- Second Grid -->
         <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
             <div class="w3-content">
 
                 <div class="w3-twothird">
-                    <h1>Organisations</h1>
-                    <h5 class="w3-padding-32">This page shows a list of charitable organisations or companies that have charity drives, that the use has saved and stored for later use!</h5>
+                    <h1>Organisationss a list of charitable organisations or companies that have charity drives, that the use has saved and stored for later use!</h5>
                 </div>
             </div>
         </div>
