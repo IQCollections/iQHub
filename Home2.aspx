@@ -98,13 +98,10 @@
     
 	<h1 style="font-size: 40px; text-align: center">Let us help you find an NGO</h1>
 	<div style="margin: 50px;">
-		<asp:DropDownList ID="drpbtnType" runat="server" Width="213px" BackColor="#4CAF50" ForeColor="White" Font-Size="Medium" CssClass="ddl" OnSelectedIndexChanged="drpbtnType_SelectedIndexChanged">
-		<asp:ListItem  Enabled="true" Text="Type of NGO" Value= "-1"></asp:ListItem>
-		</asp:DropDownList>
-
-		<div style="float: right">
-			<input type="text" placeholder="Search for NGO.." style="font-size: 20px;">
-		</div>
+	
+		<div style="margin:100px 50px 0px 0px; float:left"><asp:Button runat="server" ID="btnType1" Text="" BackColor="#4CAF50" ForeColor="White" Height="50px" Width="130px" OnClick="btnType1_Click"></asp:Button></div>
+		<div style="margin:100px 50px 0px 0px; float:left"><asp:Button runat="server" ID="btnType2" Text="" BackColor="#4CAF50" ForeColor="White" Height="50px" Width="130px" OnClick="btnType2_Click"></asp:Button></div>
+		<div style="margin:100px 50px 0px 0px; float:left"><asp:Button runat="server" ID="btnType3" Text="" BackColor="#4CAF50" ForeColor="White" Height="50px" Width="130px" OnClick="btnType3_Click"></asp:Button></div>
 	</div>
 	
 	<h1 style="text-align: center; margin: 200px 0px 0px 0px">NGO's near you</h1> 
@@ -136,48 +133,5 @@
 		</div>
 	</div>
 	<div style="margin:150px 50px"><asp:Button runat="server" ID="btnNext" Text="Next Page" BackColor="#4CAF50" ForeColor="White" Height="50px" Width="130px" OnClick="btnNext_Click"></asp:Button></div>
-	
-	<h1 style="font-size: 40px; text-align: center">How would you like to help out?</h1>
-	<div style="margin: 50px;">
-		<asp:DropDownList ID="drpbtnNeeds" runat="server" Width="213px" BackColor="#4CAF50" ForeColor="White" Font-Size="Medium" CssClass="ddl" OnSelectedIndexChanged="drpbtnNeeds_SelectedIndexChanged" >
-			<asp:ListItem Enabled="true" Text="Needs of NGO" Value= "-1"></asp:ListItem>
-		</asp:DropDownList>
-		<div style="float: right">
-			<input type="text" placeholder="Search for need.." style="font-size: 20px;">
-		</div>
-	</div>
-	
-	<h1 style="text-align: center; margin: 200px 0px 0px 0px">This is what we found near you</h1> 
-	
-	<div style="margin: 50px 0px 150px 0px">
-		<div class="card">
-			<h1 style="text-align: center; border-bottom: 4px solid deepskyblue; padding: 15px">Baby clothes donations</h1>
-			<h2><a href="#">Organisation 1</a></h2>
-			<p>We are a baby clinic. We do what we do because it's what we do. Our values are: this, this, and this.</P>
-			<p><b>Address:</b> 1 Street ave, Suburb, City</p>
-			<p><b>Contact:</b> 000 0000 0000 | ngo@ngo.ngo</p>
-			<p><b>Details:</b> This is exactly what we need.</p>
-			<p>-------IMAGE FROM ORGAINSATION HERE-------</p>
-		</div>
-		<div class="card">
-			<h1 style="text-align: center; border-bottom: 4px solid deepskyblue; padding: 15px">Volunteers to walk dogs</h1>
-			<h2><a href="#">Organisation 2</a></h2>
-			<p>We are an animal clinic. We do what we do because it's what we do. Our values are: this, this, and this.</P>
-			<p><b>Address:</b> 2 Street ave, Suburb, City</p>
-			<p><b>Contact:</b> 111 1111 1111 | ngo2@ngo.ngo</p>
-			<p><b>Details:</b> This is exactly what we need.</p>
-			<p>-------IMAGE FROM ORGAINSATION HERE-------</p>
-		</div>
-		<div class="card">
-			<h1 style="text-align: center; border-bottom: 4px solid deepskyblue; padding: 15px">Funds</h1>
-			<h2><a href="#">Organisation 3</a></h2>
-			<p>We are nature preservationists. We do what we do because it's what we do. Our values are: this, this, and this.</P>
-			<p><b>Address:</b> 3 Street ave, Suburb, City</p>
-			<p><b>Contact:</b> 222 2222 2222 | ngo3@ngo.ngo</p>
-			<p><b>Details:</b> This is exactly what we need.</p>
-			<p>-------IMAGE FROM ORGAINSATION HERE-------</p>
-		</div>
-	</div>
-	<div style="margin:150px 50px"><asp:Button runat="server" ID="btnNext2" Text="Next Page" BackColor="#4CAF50" ForeColor="White" Height="50px" Width="130px" OnClick="btnNext_Click"></asp:Button></div>
 	
 </asp:Content>
